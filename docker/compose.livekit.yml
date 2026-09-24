@@ -1,5 +1,13 @@
-# Local-only SFU. Start from the project root:
-# docker compose -f docker/compose.livekit.yml up -d
+# Local-only LiveKit SFU for Open Meeting Room audio.
+#
+# Start directly:
+#   docker compose -p standard-science-livekit -f docker/compose.livekit.yml up -d
+#
+# Or use ./scripts/dev-meeting-audio.sh, which also starts the Standard Science
+# backend/frontend with the matching local-development configuration.
+#
+# livekit-server --dev uses API key "devkey" and API secret "secret".
+# These credentials are DEVELOPMENT-ONLY and must never be used in production.
 services:
   livekit:
     image: livekit/livekit-server:v1.13.7

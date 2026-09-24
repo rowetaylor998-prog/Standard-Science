@@ -191,3 +191,58 @@ Markdown pages should stay small at first: title, short description, placeholder
   - Run `cd apps/web && npm run build`.
 - Port already in use:
   - Stop the existing backend or frontend process, or run the service manually on another port.
+
+## Open Meeting Room
+
+The `/meetings` page provides the community discussion MVP:
+
+- public and invitation-only rooms;
+- guest identities without a required account;
+- up to 100 participants per room;
+- host/moderator roles and a hand-raise queue;
+- speaker promotion, demotion, and server-enforced microphone permission;
+- realtime room state and text chat over WebSocket;
+- SQLite persistence for room/chat history;
+- optional self-hosted LiveKit audio.
+
+### Automated meeting checks
+
+```bash
+./scripts/check-meetings.sh
+```
+
+This runs the backend meeting tests and the frontend TypeScript/Vite production build.
+
+### Local audio development
+
+Docker is used only for the local LiveKit SFU; the normal frontend and backend
+remain in the existing development workflow.
+
+```bash
+./scripts/dev-meeting-audio.sh
+```
+
+Then open two browser sessions at:
+
+```text
+http://127.0.0.1:5173/meetings
+```
+
+A practical audio smoke test is:
+
+1. Create a room as the host in the first browser session.
+2. Join from a second/incognito browser session.
+3. Click **Connect audio** in both sessions.
+4. Raise the listener's hand and promote that participant to speaker.
+5. Unmute the promoted speaker and verify audio plus the speaking indicator.
+6. From the host, mute the speaker and confirm publication is revoked.
+7. Demote the speaker and confirm the microphone can no longer publish.
+
+Stop the local SFU when finished:
+
+```bash
+./scripts/stop-meeting-audio.sh
+```
+
+The `devkey` / `secret` pair used by this workflow is LiveKit's development-mode
+placeholder credential pair. Never use it for a public or production deployment.
