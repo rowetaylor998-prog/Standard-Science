@@ -1,13 +1,16 @@
+import os
+
 from dotenv import load_dotenv
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
 
-from routers import content, story, tutor
+from routers import content, story, tutor, meetings
 
 load_dotenv()
 
 
 app = FastAPI(
+    lifespan=meetings.meeting_lifespan,
     title="Be Knowledgeable API",
     description="Minimal backend skeleton for the open knowledge platform MVP.",
     version="0.1.0",
@@ -18,11 +21,14 @@ app.add_middleware(
     allow_origins=[
         "http://localhost:5173",
         "http://127.0.0.1:5173",
+        *[origin.strip() for origin in os.getenv("MEETINGS_ALLOWED_ORIGINS", "").split(",") if origin.strip()],
     ],
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
+
+app.include_router(meetings.router, prefix="/api/meetings", tags=["meetings"])
 
 app.include_router(tutor.router, prefix="/api/tutor", tags=["tutor"])
 app.include_router(story.router, prefix="/api/story", tags=["story"])

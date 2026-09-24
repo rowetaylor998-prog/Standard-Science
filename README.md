@@ -54,10 +54,18 @@ You can start both development servers with:
 ./scripts/dev.sh
 ```
 
-The script starts:
+The script starts both services, waits until they respond, and automatically opens
+the website in your default browser:
 
 - Backend: `http://127.0.0.1:8000`
 - Frontend: `http://127.0.0.1:5173`
+
+Running the command again reuses services already running from this checkout
+and opens the website again.
+If only one service is running, it starts the missing service. Ports occupied by
+another project are reported without stopping that project's processes.
+Press Ctrl+C to stop services started by the current command; reused services
+continue running in their original terminal.
 
 If setup is incomplete, it prints the manual commands to run.
 

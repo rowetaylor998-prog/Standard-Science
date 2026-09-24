@@ -1,5 +1,6 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
+import { OpenMeetingRoom } from './pages/OpenMeetingRoom'
 import { HomePage } from './pages/HomePage'
 import { MethodsPage } from './pages/MethodsPage'
 import { KnowledgePage } from './pages/KnowledgePage'
@@ -15,6 +16,7 @@ import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
   '/': HomePage,
+  '/meetings': OpenMeetingRoom,
   '/manifesto': () => (
     <MarkdownContentPage contentPath="/content/manifesto/homepage-manifesto" title="Manifesto" />
   ),

@@ -78,6 +78,62 @@ button {
   color: #17211b;
 }
 
+.external-resources {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 10px 20px;
+  padding: 12px max(20px, calc((100% - 1120px) / 2));
+  border-bottom: 1px solid #d7d2c8;
+  background: #eef2ea;
+}
+
+.external-resources-label {
+  color: #43515f;
+  font-size: 14px;
+  font-weight: 700;
+}
+
+.external-resources-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.external-resources-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  min-height: 40px;
+  padding: 8px 12px;
+  border: 1px solid #b7c3b8;
+  border-radius: 6px;
+  background: #fff;
+  color: #243d2c;
+  font-size: 14px;
+  text-decoration: none;
+}
+
+.external-resources-links a:hover {
+  background: #e3eadc;
+  text-decoration: underline;
+}
+
+.external-resources-links a:focus-visible {
+  outline: 2px solid #243d2c;
+  outline-offset: 3px;
+}
+
+.external-resources-sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip-path: inset(50%);
+  white-space: nowrap;
+}
+
 main {
   width: min(1120px, calc(100% - 40px));
   margin: 0 auto;
