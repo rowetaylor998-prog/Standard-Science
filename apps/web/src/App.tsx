@@ -26,6 +26,12 @@ const routes = {
   '/': HomePage,
   '/computer-science': ComputerScienceArchivePage,
   '/computer-science/subjects': ComputerScienceSubjectsPage,
+  '/computer-science/subjects/algorithms': () => (
+    <MarkdownContentPage
+      contentPath="/content/knowledge/computer-science/algorithms"
+      title="Algorithms & Data Structures"
+    />
+  ),
   '/computer-science/library': ComputerScienceLibraryPage,
   '/computer-science/library/reader': PersonalLibraryReaderPage,
   '/computer-science/scientists': ComputerScientistsPage,
