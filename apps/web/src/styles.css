@@ -2110,3 +2110,300 @@ button.archive-subject-link:focus-visible,
     max-width: 330px;
   }
 }
+
+
+/* Computer Science Internet Archive */
+.cs-archive-shell {
+  min-height: 100vh;
+  background: #111719;
+}
+
+.cs-archive-shell main {
+  width: min(1220px, calc(100% - 32px));
+  margin: 0 auto;
+  padding: 24px 0 34px;
+}
+
+.cs-archive-page {
+  min-height: calc(100vh - 58px);
+  color: #ece6d8;
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.cs-archive-title {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  padding: 8px 12px 20px;
+  text-align: center;
+}
+
+.cs-archive-title h1 {
+  max-width: none;
+  margin: 0;
+  color: #e2c96f;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(36px, 5.2vw, 66px);
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: -0.025em;
+}
+
+.cs-archive-title p {
+  margin: 0;
+  color: #a8afa7;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 15px;
+  line-height: 1.45;
+}
+
+.cs-archive-stage {
+  display: grid;
+  grid-template-columns: 190px minmax(310px, 1fr) minmax(190px, 0.7fr) 190px;
+  grid-template-rows: repeat(3, minmax(165px, auto));
+  grid-template-areas:
+    "left-top primary tools right-top"
+    "left-middle primary tools right-middle"
+    "left-bottom primary tools right-bottom";
+  gap: 16px 24px;
+  align-items: center;
+  width: min(1120px, 100%);
+  margin: 0 auto;
+  padding: 10px 12px 18px;
+}
+
+.cs-scientist {
+  display: grid;
+  justify-items: center;
+  gap: 7px;
+  margin: 0;
+  align-self: center;
+}
+
+.cs-scientist-left-top {
+  grid-area: left-top;
+}
+
+.cs-scientist-left-middle {
+  grid-area: left-middle;
+}
+
+.cs-scientist-left-bottom {
+  grid-area: left-bottom;
+}
+
+.cs-scientist-right-top {
+  grid-area: right-top;
+}
+
+.cs-scientist-right-middle {
+  grid-area: right-middle;
+}
+
+.cs-scientist-right-bottom {
+  grid-area: right-bottom;
+}
+
+.cs-scientist a {
+  display: block;
+  width: 142px;
+  height: 152px;
+  overflow: hidden;
+  border: 1px solid #313a3a;
+  background: #090d0e;
+  text-decoration: none;
+}
+
+.cs-scientist img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  filter: grayscale(1) contrast(1.08) brightness(0.9);
+  transition: filter 140ms ease, transform 140ms ease;
+}
+
+.cs-scientist a:hover img,
+.cs-scientist a:focus-visible img {
+  filter: grayscale(0.88) contrast(1.08) brightness(1);
+  transform: scale(1.02);
+}
+
+.cs-scientist figcaption {
+  display: grid;
+  gap: 1px;
+  max-width: 180px;
+  text-align: center;
+}
+
+.cs-scientist figcaption strong {
+  color: #e6dfd0;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1.2;
+}
+
+.cs-scientist figcaption span {
+  color: #7f8e87;
+  font-size: 11px;
+  line-height: 1.25;
+}
+
+.cs-archive-primary,
+.cs-archive-tools {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+}
+
+.cs-archive-primary {
+  grid-area: primary;
+  gap: 14px;
+  padding: 28px 8px;
+}
+
+.cs-archive-tools {
+  grid-area: tools;
+  gap: 13px;
+  padding: 28px 2px;
+}
+
+.cs-archive-entry {
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  font-family: Georgia, "Times New Roman", serif;
+  line-height: 1.08;
+  text-align: center;
+  text-decoration: none;
+}
+
+button.cs-archive-entry,
+a.cs-archive-entry {
+  cursor: pointer;
+}
+
+.cs-archive-entry.gold {
+  color: #dccb4d;
+  font-size: clamp(25px, 3vw, 39px);
+  font-weight: 500;
+}
+
+.cs-archive-entry.green {
+  color: #70b76c;
+  font-size: clamp(19px, 2vw, 27px);
+  font-weight: 500;
+}
+
+.cs-archive-entry.orange {
+  color: #df8a2b;
+  font-size: clamp(22px, 2.3vw, 31px);
+  font-weight: 600;
+  text-transform: uppercase;
+}
+
+button.cs-archive-entry:hover,
+button.cs-archive-entry:focus-visible,
+a.cs-archive-entry:hover,
+a.cs-archive-entry:focus-visible {
+  color: #ffffff;
+  text-decoration: underline;
+  outline: none;
+}
+
+.cs-archive-entry.future {
+  opacity: 0.76;
+  cursor: default;
+}
+
+.cs-archive-entry.future:hover {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cs-archive-footer {
+  width: min(820px, 100%);
+  margin: 6px auto 0;
+  padding: 16px 12px 0;
+  border-top: 1px solid #293234;
+  text-align: center;
+}
+
+.cs-archive-footer p {
+  margin: 0;
+  color: #6f7b77;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 11px;
+  line-height: 1.45;
+}
+
+@media (max-width: 980px) {
+  .cs-archive-stage {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-rows: auto;
+    grid-template-areas:
+      "primary primary"
+      "tools tools"
+      "left-top right-top"
+      "left-middle right-middle"
+      "left-bottom right-bottom";
+    gap: 22px 18px;
+    max-width: 720px;
+  }
+
+  .cs-archive-primary {
+    padding: 16px 4px 8px;
+  }
+
+  .cs-archive-tools {
+    padding: 10px 4px 20px;
+    border-bottom: 1px solid #293234;
+  }
+
+  .cs-scientist a {
+    width: min(170px, 42vw);
+    height: 180px;
+  }
+}
+
+@media (max-width: 560px) {
+  .cs-archive-shell main {
+    width: min(100% - 22px, 520px);
+    padding-top: 16px;
+  }
+
+  .cs-archive-title {
+    padding-bottom: 12px;
+  }
+
+  .cs-archive-title h1 {
+    font-size: 39px;
+  }
+
+  .cs-archive-stage {
+    gap: 18px 10px;
+    padding-inline: 0;
+  }
+
+  .cs-archive-entry.gold {
+    font-size: 28px;
+  }
+
+  .cs-archive-entry.green {
+    font-size: 21px;
+  }
+
+  .cs-scientist a {
+    width: min(150px, 42vw);
+    height: 158px;
+  }
+
+  .cs-scientist figcaption strong {
+    font-size: 13px;
+  }
+
+  .cs-scientist figcaption span {
+    font-size: 10px;
+  }
+}
