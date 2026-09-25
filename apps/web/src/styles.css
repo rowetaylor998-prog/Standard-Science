@@ -1793,3 +1793,320 @@ p {
     grid-template-columns: 1fr;
   }
 }
+
+
+/* Standard Science archive homepage */
+.archive-home-shell {
+  min-height: 100vh;
+  background: #fbfaf7;
+}
+
+.archive-home-shell main {
+  width: min(1180px, calc(100% - 36px));
+  padding: 28px 0 36px;
+}
+
+.archive-home {
+  display: grid;
+  gap: 38px;
+}
+
+.archive-orbit {
+  position: relative;
+  display: grid;
+  grid-template-columns: minmax(220px, 1fr) minmax(300px, 0.9fr) minmax(220px, 1fr);
+  grid-template-areas:
+    ". philosophy ."
+    "natural center social";
+  align-items: center;
+  min-height: 620px;
+  padding: 22px 24px 12px;
+}
+
+.archive-philosophy {
+  grid-area: philosophy;
+  justify-self: center;
+  align-self: end;
+  margin-bottom: 16px;
+}
+
+.archive-major-field,
+.archive-domain h2,
+.archive-subject-link,
+.archive-text-action,
+.archive-utility-nav button,
+.archive-utility-nav a {
+  font-family: Georgia, "Times New Roman", serif;
+}
+
+.archive-major-field,
+.archive-domain h2 {
+  color: #8e1717;
+  font-weight: 700;
+}
+
+.archive-major-field {
+  font-size: clamp(22px, 2.2vw, 32px);
+}
+
+.archive-domain {
+  display: grid;
+  gap: 18px;
+  align-content: center;
+}
+
+.archive-domain-natural {
+  grid-area: natural;
+  justify-items: end;
+  text-align: right;
+  padding-right: 30px;
+}
+
+.archive-domain-social {
+  grid-area: social;
+  justify-items: start;
+  text-align: left;
+  padding-left: 30px;
+}
+
+.archive-domain h2 {
+  margin: 0;
+  font-size: clamp(23px, 2.3vw, 34px);
+}
+
+.archive-subject-list {
+  display: grid;
+  gap: 11px;
+}
+
+.archive-subject-link {
+  display: inline-flex;
+  width: fit-content;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #a11d1d;
+  font-size: clamp(16px, 1.45vw, 21px);
+  font-weight: 700;
+  line-height: 1.25;
+  text-decoration: none;
+}
+
+button.archive-subject-link {
+  cursor: pointer;
+}
+
+button.archive-subject-link:hover,
+button.archive-subject-link:focus-visible,
+.archive-utility-nav button:hover,
+.archive-utility-nav button:focus-visible,
+.archive-utility-nav a:hover,
+.archive-utility-nav a:focus-visible,
+.archive-text-action:hover,
+.archive-text-action:focus-visible {
+  color: #5f0d0d;
+  text-decoration: underline;
+}
+
+.archive-subject-link.primary {
+  color: #731111;
+  font-size: clamp(18px, 1.6vw, 23px);
+}
+
+.archive-subject-link.future,
+.archive-major-field.future {
+  cursor: default;
+}
+
+.archive-subject-link.future {
+  opacity: 0.82;
+}
+
+.archive-center {
+  grid-area: center;
+  display: grid;
+  justify-items: center;
+  gap: 14px;
+}
+
+.archive-mark {
+  display: grid;
+  justify-items: center;
+  gap: 18px;
+}
+
+.archive-mark-ring {
+  display: grid;
+  place-items: center;
+  width: clamp(210px, 24vw, 300px);
+  aspect-ratio: 1;
+  padding: 14px;
+  border: 14px solid #111111;
+  border-radius: 50%;
+  background: #ffffff;
+}
+
+.archive-mark-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 20%;
+  border-radius: 50%;
+  filter: grayscale(1) contrast(1.04);
+}
+
+.archive-mark-copy {
+  display: grid;
+  gap: 3px;
+  text-align: center;
+}
+
+.archive-mark-copy h1 {
+  margin: 0;
+  max-width: none;
+  color: #111111;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(32px, 4.1vw, 54px);
+  line-height: 1;
+  letter-spacing: 0.01em;
+}
+
+.archive-mark-copy p {
+  margin: 0;
+  color: #8e1717;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(15px, 1.5vw, 20px);
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.archive-mark-note {
+  max-width: 290px;
+  margin: 0;
+  color: #7b746b;
+  font-size: 12px;
+  line-height: 1.4;
+  text-align: center;
+}
+
+.archive-manifesto {
+  width: min(780px, 100%);
+  margin: 0 auto;
+  padding: 26px 12px 8px;
+  border-top: 1px solid #ded9d0;
+  text-align: center;
+}
+
+.archive-section-kicker {
+  margin-bottom: 6px;
+  color: #8e1717;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.archive-manifesto h2 {
+  margin-bottom: 12px;
+  color: #171717;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(24px, 3vw, 34px);
+}
+
+.archive-manifesto p {
+  max-width: 700px;
+  margin: 0 auto 14px;
+  color: #4e4a45;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 16px;
+  line-height: 1.68;
+}
+
+.archive-text-action {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #8e1717;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 700;
+}
+
+.archive-utility-nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 7px 14px;
+  padding: 8px 12px 0;
+  color: #8e1717;
+}
+
+.archive-utility-nav button,
+.archive-utility-nav a {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: #8e1717;
+  cursor: pointer;
+  font-size: 14px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+.archive-utility-nav > *:not(:last-child)::after {
+  content: " |";
+  color: #b5aaa0;
+  text-decoration: none;
+}
+
+@media (max-width: 860px) {
+  .archive-home-shell main {
+    width: min(100% - 26px, 760px);
+    padding-top: 22px;
+  }
+
+  .archive-orbit {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "center"
+      "philosophy"
+      "natural"
+      "social";
+    gap: 28px;
+    min-height: 0;
+    padding: 12px 0;
+  }
+
+  .archive-center {
+    order: -1;
+  }
+
+  .archive-philosophy {
+    margin: 0;
+  }
+
+  .archive-domain-natural,
+  .archive-domain-social {
+    justify-items: center;
+    padding: 0;
+    text-align: center;
+  }
+
+  .archive-domain {
+    padding-top: 22px;
+    border-top: 1px solid #ded9d0;
+  }
+
+  .archive-subject-list {
+    justify-items: center;
+  }
+
+  .archive-mark-ring {
+    width: min(250px, 62vw);
+  }
+
+  .archive-mark-note {
+    max-width: 330px;
+  }
+}
