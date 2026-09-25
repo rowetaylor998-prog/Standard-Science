@@ -17,7 +17,7 @@ const naturalScience: SubjectItem[] = [
   { label: 'Biology' },
   {
     label: 'Computer Science',
-    route: '/repositories/computer-technical-systems',
+    route: '/computer-science',
     emphasis: true
   },
   { label: 'Artificial Intelligence', emphasis: true }
