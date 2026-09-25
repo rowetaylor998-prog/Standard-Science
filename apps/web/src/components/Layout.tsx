@@ -12,14 +12,17 @@ type LayoutProps = {
 
 export function Layout({ children, currentRoute, onNavigate }: LayoutProps) {
   const isStandardScienceHome = currentRoute === '/'
+  const isComputerScienceRoute = currentRoute.startsWith('/computer-science')
   const isComputerScienceHome = currentRoute === '/computer-science'
-  const isArchivePortal = isStandardScienceHome || isComputerScienceHome
+  const isArchivePortal = isStandardScienceHome || isComputerScienceRoute
 
   const shellClassName = isComputerScienceHome
     ? 'app-shell cs-archive-shell'
-    : isStandardScienceHome
-      ? 'app-shell archive-home-shell'
-      : 'app-shell'
+    : isComputerScienceRoute
+      ? 'app-shell cs-section-shell'
+      : isStandardScienceHome
+        ? 'app-shell archive-home-shell'
+        : 'app-shell'
 
   return (
     <div className={shellClassName}>
