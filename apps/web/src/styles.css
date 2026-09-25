@@ -2115,32 +2115,32 @@ button.archive-subject-link:focus-visible,
 /* Computer Science Internet Archive */
 .cs-archive-shell {
   min-height: 100vh;
-  background: #0c1113;
+  background: #090d0f;
 }
 
 .cs-archive-shell main {
-  width: min(1180px, calc(100% - 28px));
+  width: min(1260px, calc(100% - 24px));
   margin: 0 auto;
-  padding: 8px 0 28px;
+  padding: 4px 0 28px;
 }
 
 .cs-archive-page {
-  min-height: calc(100vh - 36px);
+  min-height: calc(100vh - 32px);
   color: #ece6d8;
   font-family: Georgia, "Times New Roman", serif;
 }
 
 .cs-archive-stage {
   position: relative;
-  width: min(1000px, 100%);
-  height: 700px;
+  width: min(1180px, 100%);
+  height: 760px;
   margin: 0 auto;
   overflow: hidden;
   isolation: isolate;
   background:
-    radial-gradient(circle at 49% 43%, rgba(90, 18, 14, 0.22), transparent 31%),
-    radial-gradient(circle at 58% 56%, rgba(93, 42, 17, 0.11), transparent 26%),
-    linear-gradient(180deg, #0e1416 0%, #0b1012 100%);
+    radial-gradient(ellipse at 50% 44%, rgba(104, 24, 17, 0.2), transparent 31%),
+    radial-gradient(ellipse at 52% 57%, rgba(90, 46, 21, 0.1), transparent 28%),
+    linear-gradient(180deg, #0c1214 0%, #090d0f 100%);
 }
 
 .cs-archive-stage::before,
@@ -2153,56 +2153,57 @@ button.archive-subject-link:focus-visible,
 
 .cs-archive-stage::before {
   z-index: 0;
-  opacity: 0.42;
+  opacity: 0.35;
   background:
     repeating-linear-gradient(
       103deg,
-      transparent 0 58px,
-      rgba(138, 60, 35, 0.035) 58px 60px,
-      transparent 60px 118px
+      transparent 0 64px,
+      rgba(138, 60, 35, 0.027) 64px 66px,
+      transparent 66px 126px
     );
 }
 
 .cs-archive-stage::after {
-  z-index: 8;
-  box-shadow: inset 0 0 90px 24px #0c1113;
+  z-index: 20;
+  box-shadow: inset 0 0 115px 38px #090d0f;
 }
 
 .cs-archive-red-haze {
   position: absolute;
   z-index: 1;
-  left: 24%;
-  top: 15%;
-  width: 58%;
-  height: 63%;
+  left: 25%;
+  top: 14%;
+  width: 54%;
+  height: 67%;
   pointer-events: none;
-  opacity: 0.72;
-  filter: blur(14px);
+  opacity: 0.68;
+  filter: blur(18px);
   background:
-    radial-gradient(ellipse at 35% 35%, rgba(111, 26, 20, 0.28), transparent 48%),
-    radial-gradient(ellipse at 68% 63%, rgba(91, 43, 20, 0.2), transparent 44%);
+    radial-gradient(ellipse at 34% 32%, rgba(112, 28, 20, 0.26), transparent 46%),
+    radial-gradient(ellipse at 68% 66%, rgba(87, 42, 19, 0.18), transparent 45%);
 }
 
 .cs-archive-title {
   position: absolute;
-  z-index: 6;
-  top: 7px;
+  z-index: 9;
+  top: 14px;
   left: 50%;
-  width: 84%;
+  width: 96%;
   transform: translateX(-50%);
   text-align: center;
+  white-space: nowrap;
 }
 
 .cs-archive-title h1 {
   max-width: none;
   margin: 0;
-  color: #dfcc8e;
+  color: #ddca8f;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(44px, 5.4vw, 68px);
+  font-size: clamp(42px, 4.45vw, 58px);
   font-weight: 500;
-  line-height: 0.98;
-  letter-spacing: -0.03em;
-  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
+  line-height: 1;
+  letter-spacing: -0.035em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.04);
 }
 
 .cs-scientist {
@@ -2213,11 +2214,24 @@ button.archive-subject-link:focus-visible,
 }
 
 .cs-scientist a {
+  position: relative;
   display: block;
   width: 100%;
   height: 100%;
+  overflow: hidden;
   pointer-events: auto;
   text-decoration: none;
+  background: transparent;
+}
+
+.cs-scientist a::after {
+  content: "";
+  position: absolute;
+  inset: -2px;
+  pointer-events: none;
+  box-shadow:
+    inset 0 0 34px 17px #090d0f,
+    inset 0 0 72px 24px rgba(9, 13, 15, 0.72);
 }
 
 .cs-scientist img {
@@ -2226,66 +2240,78 @@ button.archive-subject-link:focus-visible,
   height: 100%;
   object-fit: cover;
   border: 0;
-  filter: grayscale(1) contrast(1.14) brightness(0.82);
-  opacity: 0.92;
-  -webkit-mask-image: radial-gradient(ellipse 72% 86% at 50% 46%, #000 58%, transparent 100%);
-  mask-image: radial-gradient(ellipse 72% 86% at 50% 46%, #000 58%, transparent 100%);
+  opacity: 0.9;
+  filter: grayscale(1) contrast(1.24) brightness(0.72);
+  -webkit-mask-image: radial-gradient(
+    ellipse 88% 96% at 50% 47%,
+    #000 35%,
+    rgba(0, 0, 0, 0.96) 53%,
+    rgba(0, 0, 0, 0.56) 70%,
+    transparent 94%
+  );
+  mask-image: radial-gradient(
+    ellipse 88% 96% at 50% 47%,
+    #000 35%,
+    rgba(0, 0, 0, 0.96) 53%,
+    rgba(0, 0, 0, 0.56) 70%,
+    transparent 94%
+  );
   transition: filter 150ms ease, opacity 150ms ease, transform 150ms ease;
 }
 
 .cs-scientist a:hover img,
 .cs-scientist a:focus-visible img {
-  filter: grayscale(0.9) contrast(1.12) brightness(0.98);
+  filter: grayscale(0.93) contrast(1.19) brightness(0.88);
   opacity: 1;
-  transform: scale(1.015);
+  transform: scale(1.012);
 }
 
 .cs-scientist-left-top {
   left: 2%;
   top: 74px;
-  width: 245px;
-  height: 300px;
+  width: 260px;
+  height: 320px;
+}
+
+.cs-scientist-right-top {
+  right: 1.5%;
+  top: 66px;
+  width: 248px;
+  height: 305px;
 }
 
 .cs-scientist-left-middle {
   left: 0;
-  top: 322px;
-  width: 210px;
-  height: 260px;
-}
-
-.cs-scientist-left-bottom {
-  left: 22%;
-  top: 448px;
-  width: 195px;
-  height: 220px;
-}
-
-.cs-scientist-right-top {
-  right: 0;
-  top: 61px;
-  width: 230px;
-  height: 284px;
+  top: 335px;
+  width: 225px;
+  height: 275px;
 }
 
 .cs-scientist-right-middle {
-  right: 1%;
-  top: 300px;
-  width: 205px;
-  height: 260px;
+  right: 0;
+  top: 330px;
+  width: 222px;
+  height: 278px;
+}
+
+.cs-scientist-left-bottom {
+  left: 24%;
+  top: 500px;
+  width: 185px;
+  height: 205px;
 }
 
 .cs-scientist-right-bottom {
-  right: 18%;
-  top: 452px;
-  width: 205px;
-  height: 220px;
+  right: 25%;
+  top: 510px;
+  width: 188px;
+  height: 205px;
 }
 
 .cs-archive-primary,
 .cs-archive-tools {
   position: absolute;
-  z-index: 6;
+  z-index: 10;
   display: grid;
   justify-items: center;
   align-content: center;
@@ -2293,17 +2319,17 @@ button.archive-subject-link:focus-visible,
 }
 
 .cs-archive-primary {
-  left: 27%;
-  top: 132px;
-  width: 39%;
-  gap: 12px;
+  left: 29%;
+  top: 128px;
+  width: 35%;
+  gap: 13px;
 }
 
 .cs-archive-tools {
   left: 56%;
-  top: 287px;
-  width: 30%;
-  gap: 11px;
+  top: 304px;
+  width: 19%;
+  gap: 10px;
 }
 
 .cs-archive-entry {
@@ -2312,10 +2338,10 @@ button.archive-subject-link:focus-visible,
   border: 0;
   background: transparent;
   font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.03;
+  line-height: 1.02;
   text-align: center;
   text-decoration: none;
-  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
+  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.68);
 }
 
 button.cs-archive-entry,
@@ -2324,20 +2350,20 @@ a.cs-archive-entry {
 }
 
 .cs-archive-entry.gold {
-  color: #d3c62e;
-  font-size: clamp(29px, 3.15vw, 42px);
+  color: #d1c633;
+  font-size: clamp(29px, 2.95vw, 40px);
   font-weight: 500;
 }
 
 .cs-archive-entry.green {
-  color: #68aa62;
-  font-size: clamp(20px, 2.1vw, 29px);
+  color: #68a860;
+  font-size: clamp(19px, 1.78vw, 26px);
   font-weight: 500;
 }
 
 .cs-archive-entry.orange {
-  color: #e58a22;
-  font-size: clamp(24px, 2.35vw, 32px);
+  color: #e68b25;
+  font-size: clamp(22px, 2vw, 29px);
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -2352,7 +2378,7 @@ a.cs-archive-entry:focus-visible {
 }
 
 .cs-archive-entry.future {
-  opacity: 0.82;
+  opacity: 0.83;
   cursor: default;
 }
 
@@ -2395,7 +2421,7 @@ a.cs-archive-entry:focus-visible {
     overflow: visible;
     background:
       radial-gradient(circle at 50% 28%, rgba(90, 18, 14, 0.19), transparent 34%),
-      #0c1113;
+      #090d0f;
   }
 
   .cs-archive-stage::after {
@@ -2420,6 +2446,7 @@ a.cs-archive-entry:focus-visible {
     grid-area: title;
     width: 100%;
     padding: 4px 4px 0;
+    white-space: normal;
   }
 
   .cs-archive-title h1 {
@@ -2468,9 +2495,10 @@ a.cs-archive-entry:focus-visible {
     height: 235px;
   }
 
-  .cs-scientist img {
-    -webkit-mask-image: radial-gradient(ellipse 74% 87% at 50% 46%, #000 60%, transparent 100%);
-    mask-image: radial-gradient(ellipse 74% 87% at 50% 46%, #000 60%, transparent 100%);
+  .cs-scientist a::after {
+    box-shadow:
+      inset 0 0 30px 14px #090d0f,
+      inset 0 0 60px 20px rgba(9, 13, 15, 0.68);
   }
 }
 
