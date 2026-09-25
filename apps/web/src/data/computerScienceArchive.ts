@@ -47,7 +47,7 @@ export const computerScienceSubjects: ComputerScienceSubject[] = [
     title: 'Algorithms & Data Structures',
     description:
       'Algorithm design, complexity, data structures, graph methods, optimization, approximation, and modern algorithmic systems.',
-    route: '/content/knowledge/computer-science/algorithms'
+    route: '/computer-science/subjects/algorithms'
   },
   {
     title: 'Programming',
