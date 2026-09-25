@@ -11,14 +11,22 @@ type LayoutProps = {
 }
 
 export function Layout({ children, currentRoute, onNavigate }: LayoutProps) {
-  const isArchiveHome = currentRoute === '/' || currentRoute === '/computer-science'
+  const isStandardScienceHome = currentRoute === '/'
+  const isComputerScienceHome = currentRoute === '/computer-science'
+  const isArchivePortal = isStandardScienceHome || isComputerScienceHome
+
+  const shellClassName = isComputerScienceHome
+    ? 'app-shell cs-archive-shell'
+    : isStandardScienceHome
+      ? 'app-shell archive-home-shell'
+      : 'app-shell'
 
   return (
-    <div className={isArchiveHome ? 'app-shell archive-home-shell' : 'app-shell'}>
-      {!isArchiveHome && <Navigation currentRoute={currentRoute} onNavigate={onNavigate} />}
-      {!isArchiveHome && <ExternalResources />}
+    <div className={shellClassName}>
+      {!isArchivePortal && <Navigation currentRoute={currentRoute} onNavigate={onNavigate} />}
+      {!isArchivePortal && <ExternalResources />}
       <main>{children}</main>
-      {!isArchiveHome && <AITutorWidget />}
+      {!isArchivePortal && <AITutorWidget />}
     </div>
   )
 }
