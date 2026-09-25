@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
 import { OpenMeetingRoom } from './pages/OpenMeetingRoom'
 import { HomePage } from './pages/HomePage'
+import { ComputerScienceArchivePage } from './pages/ComputerScienceArchivePage'
 import { MethodsPage } from './pages/MethodsPage'
 import { KnowledgePage } from './pages/KnowledgePage'
 import { WorksPage } from './pages/WorksPage'
@@ -16,6 +17,7 @@ import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
   '/': HomePage,
+  '/computer-science': ComputerScienceArchivePage,
   '/meetings': OpenMeetingRoom,
   '/manifesto': () => (
     <MarkdownContentPage contentPath="/content/manifesto/homepage-manifesto" title="Manifesto" />
