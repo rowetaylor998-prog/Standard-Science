@@ -76,20 +76,18 @@ const scientists: Scientist[] = [
 ]
 
 const mainArchiveLinks: ArchiveLink[] = [
-  { label: 'Subjects', route: '/repositories/computer-technical-systems', tone: 'gold' },
-  { label: 'Library', route: '/knowledge', tone: 'gold' },
-  { label: 'Computer Scientists', status: 'future', tone: 'gold' },
-  { label: 'History', status: 'future', tone: 'gold' },
-  { label: 'Practice & Projects', status: 'future', tone: 'gold' }
+  { label: 'Subjects', route: '/computer-science/subjects', tone: 'gold' },
+  { label: 'Library', route: '/computer-science/library', tone: 'gold' },
+  { label: 'Computer Scientists', route: '/computer-science/scientists', tone: 'gold' },
+  { label: 'History', route: '/computer-science/history', tone: 'gold' },
+  { label: 'Practice & Projects', route: '/computer-science/practice-projects', tone: 'gold' }
 ]
 
 const archiveTools: ArchiveLink[] = [
-  { label: 'AI Tutor', status: 'future', tone: 'green' },
   { label: 'Open Meetings', route: '/meetings', tone: 'green' },
   { label: 'Lessons', route: '/methods-and-lessons', tone: 'green' },
   { label: 'About the Archive', route: '/manifesto', tone: 'green' },
-  { label: 'Search', route: '/knowledge', tone: 'orange' },
-  { label: 'Archive of Sparks', route: '/works/archive-of-sparks', tone: 'green' }
+  { label: 'Search', route: '/computer-science/search', tone: 'orange' }
 ]
 
 function ArchiveEntry({
