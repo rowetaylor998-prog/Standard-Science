@@ -2115,102 +2115,108 @@ button.archive-subject-link:focus-visible,
 /* Computer Science Internet Archive */
 .cs-archive-shell {
   min-height: 100vh;
-  background: #111719;
+  background: #0c1113;
 }
 
 .cs-archive-shell main {
-  width: min(1220px, calc(100% - 32px));
+  width: min(1180px, calc(100% - 28px));
   margin: 0 auto;
-  padding: 24px 0 34px;
+  padding: 8px 0 28px;
 }
 
 .cs-archive-page {
-  min-height: calc(100vh - 58px);
+  min-height: calc(100vh - 36px);
   color: #ece6d8;
   font-family: Georgia, "Times New Roman", serif;
 }
 
+.cs-archive-stage {
+  position: relative;
+  width: min(1000px, 100%);
+  height: 700px;
+  margin: 0 auto;
+  overflow: hidden;
+  isolation: isolate;
+  background:
+    radial-gradient(circle at 49% 43%, rgba(90, 18, 14, 0.22), transparent 31%),
+    radial-gradient(circle at 58% 56%, rgba(93, 42, 17, 0.11), transparent 26%),
+    linear-gradient(180deg, #0e1416 0%, #0b1012 100%);
+}
+
+.cs-archive-stage::before,
+.cs-archive-stage::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.cs-archive-stage::before {
+  z-index: 0;
+  opacity: 0.42;
+  background:
+    repeating-linear-gradient(
+      103deg,
+      transparent 0 58px,
+      rgba(138, 60, 35, 0.035) 58px 60px,
+      transparent 60px 118px
+    );
+}
+
+.cs-archive-stage::after {
+  z-index: 8;
+  box-shadow: inset 0 0 90px 24px #0c1113;
+}
+
+.cs-archive-red-haze {
+  position: absolute;
+  z-index: 1;
+  left: 24%;
+  top: 15%;
+  width: 58%;
+  height: 63%;
+  pointer-events: none;
+  opacity: 0.72;
+  filter: blur(14px);
+  background:
+    radial-gradient(ellipse at 35% 35%, rgba(111, 26, 20, 0.28), transparent 48%),
+    radial-gradient(ellipse at 68% 63%, rgba(91, 43, 20, 0.2), transparent 44%);
+}
+
 .cs-archive-title {
-  display: grid;
-  justify-items: center;
-  gap: 7px;
-  padding: 8px 12px 20px;
+  position: absolute;
+  z-index: 6;
+  top: 7px;
+  left: 50%;
+  width: 84%;
+  transform: translateX(-50%);
   text-align: center;
 }
 
 .cs-archive-title h1 {
   max-width: none;
   margin: 0;
-  color: #e2c96f;
+  color: #dfcc8e;
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(36px, 5.2vw, 66px);
+  font-size: clamp(44px, 5.4vw, 68px);
   font-weight: 500;
-  line-height: 1;
-  letter-spacing: -0.025em;
-}
-
-.cs-archive-title p {
-  margin: 0;
-  color: #a8afa7;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 15px;
-  line-height: 1.45;
-}
-
-.cs-archive-stage {
-  display: grid;
-  grid-template-columns: 190px minmax(310px, 1fr) minmax(190px, 0.7fr) 190px;
-  grid-template-rows: repeat(3, minmax(165px, auto));
-  grid-template-areas:
-    "left-top primary tools right-top"
-    "left-middle primary tools right-middle"
-    "left-bottom primary tools right-bottom";
-  gap: 16px 24px;
-  align-items: center;
-  width: min(1120px, 100%);
-  margin: 0 auto;
-  padding: 10px 12px 18px;
+  line-height: 0.98;
+  letter-spacing: -0.03em;
+  text-shadow: 0 1px 0 rgba(255, 255, 255, 0.05);
 }
 
 .cs-scientist {
-  display: grid;
-  justify-items: center;
-  gap: 7px;
+  position: absolute;
+  z-index: 3;
   margin: 0;
-  align-self: center;
-}
-
-.cs-scientist-left-top {
-  grid-area: left-top;
-}
-
-.cs-scientist-left-middle {
-  grid-area: left-middle;
-}
-
-.cs-scientist-left-bottom {
-  grid-area: left-bottom;
-}
-
-.cs-scientist-right-top {
-  grid-area: right-top;
-}
-
-.cs-scientist-right-middle {
-  grid-area: right-middle;
-}
-
-.cs-scientist-right-bottom {
-  grid-area: right-bottom;
+  pointer-events: none;
 }
 
 .cs-scientist a {
   display: block;
-  width: 142px;
-  height: 152px;
-  overflow: hidden;
-  border: 1px solid #313a3a;
-  background: #090d0e;
+  width: 100%;
+  height: 100%;
+  pointer-events: auto;
   text-decoration: none;
 }
 
@@ -2219,53 +2225,85 @@ button.archive-subject-link:focus-visible,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  filter: grayscale(1) contrast(1.08) brightness(0.9);
-  transition: filter 140ms ease, transform 140ms ease;
+  border: 0;
+  filter: grayscale(1) contrast(1.14) brightness(0.82);
+  opacity: 0.92;
+  -webkit-mask-image: radial-gradient(ellipse 72% 86% at 50% 46%, #000 58%, transparent 100%);
+  mask-image: radial-gradient(ellipse 72% 86% at 50% 46%, #000 58%, transparent 100%);
+  transition: filter 150ms ease, opacity 150ms ease, transform 150ms ease;
 }
 
 .cs-scientist a:hover img,
 .cs-scientist a:focus-visible img {
-  filter: grayscale(0.88) contrast(1.08) brightness(1);
-  transform: scale(1.02);
+  filter: grayscale(0.9) contrast(1.12) brightness(0.98);
+  opacity: 1;
+  transform: scale(1.015);
 }
 
-.cs-scientist figcaption {
-  display: grid;
-  gap: 1px;
-  max-width: 180px;
-  text-align: center;
+.cs-scientist-left-top {
+  left: 2%;
+  top: 74px;
+  width: 245px;
+  height: 300px;
 }
 
-.cs-scientist figcaption strong {
-  color: #e6dfd0;
-  font-size: 15px;
-  font-weight: 600;
-  line-height: 1.2;
+.cs-scientist-left-middle {
+  left: 0;
+  top: 322px;
+  width: 210px;
+  height: 260px;
 }
 
-.cs-scientist figcaption span {
-  color: #7f8e87;
-  font-size: 11px;
-  line-height: 1.25;
+.cs-scientist-left-bottom {
+  left: 22%;
+  top: 448px;
+  width: 195px;
+  height: 220px;
+}
+
+.cs-scientist-right-top {
+  right: 0;
+  top: 61px;
+  width: 230px;
+  height: 284px;
+}
+
+.cs-scientist-right-middle {
+  right: 1%;
+  top: 300px;
+  width: 205px;
+  height: 260px;
+}
+
+.cs-scientist-right-bottom {
+  right: 18%;
+  top: 452px;
+  width: 205px;
+  height: 220px;
 }
 
 .cs-archive-primary,
 .cs-archive-tools {
+  position: absolute;
+  z-index: 6;
   display: grid;
   justify-items: center;
   align-content: center;
+  text-align: center;
 }
 
 .cs-archive-primary {
-  grid-area: primary;
-  gap: 14px;
-  padding: 28px 8px;
+  left: 27%;
+  top: 132px;
+  width: 39%;
+  gap: 12px;
 }
 
 .cs-archive-tools {
-  grid-area: tools;
-  gap: 13px;
-  padding: 28px 2px;
+  left: 56%;
+  top: 287px;
+  width: 30%;
+  gap: 11px;
 }
 
 .cs-archive-entry {
@@ -2274,9 +2312,10 @@ button.archive-subject-link:focus-visible,
   border: 0;
   background: transparent;
   font-family: Georgia, "Times New Roman", serif;
-  line-height: 1.08;
+  line-height: 1.03;
   text-align: center;
   text-decoration: none;
+  text-shadow: 0 1px 7px rgba(0, 0, 0, 0.6);
 }
 
 button.cs-archive-entry,
@@ -2285,20 +2324,20 @@ a.cs-archive-entry {
 }
 
 .cs-archive-entry.gold {
-  color: #dccb4d;
-  font-size: clamp(25px, 3vw, 39px);
+  color: #d3c62e;
+  font-size: clamp(29px, 3.15vw, 42px);
   font-weight: 500;
 }
 
 .cs-archive-entry.green {
-  color: #70b76c;
-  font-size: clamp(19px, 2vw, 27px);
+  color: #68aa62;
+  font-size: clamp(20px, 2.1vw, 29px);
   font-weight: 500;
 }
 
 .cs-archive-entry.orange {
-  color: #df8a2b;
-  font-size: clamp(22px, 2.3vw, 31px);
+  color: #e58a22;
+  font-size: clamp(24px, 2.35vw, 32px);
   font-weight: 600;
   text-transform: uppercase;
 }
@@ -2307,13 +2346,13 @@ button.cs-archive-entry:hover,
 button.cs-archive-entry:focus-visible,
 a.cs-archive-entry:hover,
 a.cs-archive-entry:focus-visible {
-  color: #ffffff;
+  color: #f4efe4;
   text-decoration: underline;
   outline: none;
 }
 
 .cs-archive-entry.future {
-  opacity: 0.76;
+  opacity: 0.82;
   cursor: default;
 }
 
@@ -2322,68 +2361,131 @@ a.cs-archive-entry:focus-visible {
   text-decoration: none;
 }
 
-.cs-archive-footer {
-  width: min(820px, 100%);
-  margin: 6px auto 0;
-  padding: 16px 12px 0;
-  border-top: 1px solid #293234;
-  text-align: center;
-}
-
-.cs-archive-footer p {
-  margin: 0;
-  color: #6f7b77;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 11px;
-  line-height: 1.45;
+.cs-visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+  border: 0;
 }
 
 @media (max-width: 980px) {
+  .cs-archive-shell main {
+    width: min(100% - 22px, 760px);
+    padding-top: 12px;
+  }
+
   .cs-archive-stage {
+    display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    grid-template-rows: auto;
     grid-template-areas:
+      "title title"
       "primary primary"
       "tools tools"
       "left-top right-top"
       "left-middle right-middle"
       "left-bottom right-bottom";
-    gap: 22px 18px;
-    max-width: 720px;
+    gap: 22px 14px;
+    height: auto;
+    min-height: 0;
+    padding: 0 4px 34px;
+    overflow: visible;
+    background:
+      radial-gradient(circle at 50% 28%, rgba(90, 18, 14, 0.19), transparent 34%),
+      #0c1113;
+  }
+
+  .cs-archive-stage::after {
+    display: none;
+  }
+
+  .cs-archive-red-haze {
+    display: none;
+  }
+
+  .cs-archive-title,
+  .cs-archive-primary,
+  .cs-archive-tools,
+  .cs-scientist {
+    position: static;
+    transform: none;
+    width: auto;
+    height: auto;
+  }
+
+  .cs-archive-title {
+    grid-area: title;
+    width: 100%;
+    padding: 4px 4px 0;
+  }
+
+  .cs-archive-title h1 {
+    font-size: clamp(38px, 8vw, 58px);
   }
 
   .cs-archive-primary {
-    padding: 16px 4px 8px;
+    grid-area: primary;
+    gap: 10px;
+    padding-top: 4px;
   }
 
   .cs-archive-tools {
-    padding: 10px 4px 20px;
-    border-bottom: 1px solid #293234;
+    grid-area: tools;
+    gap: 9px;
+    padding-bottom: 10px;
   }
 
-  .cs-scientist a {
-    width: min(170px, 42vw);
-    height: 180px;
+  .cs-scientist-left-top {
+    grid-area: left-top;
+  }
+
+  .cs-scientist-right-top {
+    grid-area: right-top;
+  }
+
+  .cs-scientist-left-middle {
+    grid-area: left-middle;
+  }
+
+  .cs-scientist-right-middle {
+    grid-area: right-middle;
+  }
+
+  .cs-scientist-left-bottom {
+    grid-area: left-bottom;
+  }
+
+  .cs-scientist-right-bottom {
+    grid-area: right-bottom;
+  }
+
+  .cs-scientist {
+    justify-self: center;
+    width: min(210px, 44vw);
+    height: 235px;
+  }
+
+  .cs-scientist img {
+    -webkit-mask-image: radial-gradient(ellipse 74% 87% at 50% 46%, #000 60%, transparent 100%);
+    mask-image: radial-gradient(ellipse 74% 87% at 50% 46%, #000 60%, transparent 100%);
   }
 }
 
 @media (max-width: 560px) {
   .cs-archive-shell main {
-    width: min(100% - 22px, 520px);
-    padding-top: 16px;
-  }
-
-  .cs-archive-title {
-    padding-bottom: 12px;
-  }
-
-  .cs-archive-title h1 {
-    font-size: 39px;
+    width: min(100% - 16px, 520px);
+    padding-top: 8px;
   }
 
   .cs-archive-stage {
-    gap: 18px 10px;
-    padding-inline: 0;
+    gap: 16px 6px;
+  }
+
+  .cs-archive-title h1 {
+    font-size: 37px;
   }
 
   .cs-archive-entry.gold {
@@ -2391,19 +2493,15 @@ a.cs-archive-entry:focus-visible {
   }
 
   .cs-archive-entry.green {
-    font-size: 21px;
+    font-size: 20px;
   }
 
-  .cs-scientist a {
-    width: min(150px, 42vw);
-    height: 158px;
+  .cs-archive-entry.orange {
+    font-size: 23px;
   }
 
-  .cs-scientist figcaption strong {
-    font-size: 13px;
-  }
-
-  .cs-scientist figcaption span {
-    font-size: 10px;
+  .cs-scientist {
+    width: min(160px, 44vw);
+    height: 178px;
   }
 }
