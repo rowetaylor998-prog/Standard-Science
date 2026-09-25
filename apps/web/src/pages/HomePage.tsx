@@ -1,104 +1,151 @@
 import type { RoutePath } from '../App'
-import { MarkdownPage } from '../components/MarkdownPage'
-import { SectionList } from '../components/SectionList'
 
 type PageProps = {
   onNavigate: (route: RoutePath) => void
 }
 
+type SubjectItem = {
+  label: string
+  route?: RoutePath
+  emphasis?: boolean
+}
+
+const naturalScience: SubjectItem[] = [
+  { label: 'Mathematics' },
+  { label: 'Physics' },
+  { label: 'Chemistry' },
+  { label: 'Biology' },
+  {
+    label: 'Computer Science',
+    route: '/repositories/computer-technical-systems',
+    emphasis: true
+  },
+  { label: 'Artificial Intelligence', emphasis: true }
+]
+
+const socialScience: SubjectItem[] = [
+  { label: 'Economics' },
+  { label: 'Political Science' },
+  { label: 'Law' },
+  { label: 'Military Science' },
+  { label: 'Political Thought & Ideology' }
+]
+
+const turingPortrait =
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Alan_Turing_(1912-1954)_in_1936_at_Princeton_University_(b%26w).jpg'
+
+function SubjectEntry({
+  item,
+  onNavigate
+}: {
+  item: SubjectItem
+  onNavigate: (route: RoutePath) => void
+}) {
+  if (item.route) {
+    return (
+      <button
+        type="button"
+        className={item.emphasis ? 'archive-subject-link primary' : 'archive-subject-link'}
+        onClick={() => onNavigate(item.route!)}
+      >
+        {item.label}
+      </button>
+    )
+  }
+
+  return (
+    <span
+      className={item.emphasis ? 'archive-subject-link future primary' : 'archive-subject-link future'}
+      title="Archive under construction"
+      aria-label={`${item.label}, archive under construction`}
+    >
+      {item.label}
+    </span>
+  )
+}
+
 export function HomePage({ onNavigate }: PageProps) {
   return (
-    <>
-      <section className="hero">
-        <p className="eyebrow">Open knowledge platform MVP</p>
-        <h1>Be Knowledgeable. Be Free. Be Independent. Be Capable.</h1>
-      </section>
+    <div className="archive-home">
+      <section className="archive-orbit" aria-labelledby="standard-science-title">
+        <div className="archive-philosophy">
+          <span className="archive-major-field future" title="Archive under construction">
+            Philosophy
+          </span>
+        </div>
 
-      <section className="homepage-manifesto">
-        <MarkdownPage contentPath="/content/manifesto/homepage-manifesto" />
-      </section>
+        <section className="archive-domain archive-domain-natural" aria-labelledby="natural-science-title">
+          <h2 id="natural-science-title">Natural Science</h2>
+          <div className="archive-subject-list">
+            {naturalScience.map((item) => (
+              <SubjectEntry key={item.label} item={item} onNavigate={onNavigate} />
+            ))}
+          </div>
+        </section>
 
-      <section className="home-actions" aria-label="Main sections">
-        <button type="button" onClick={() => onNavigate('/manifesto')}>
-          Open Manifesto
-        </button>
-        <button type="button" onClick={() => onNavigate('/methods-and-lessons')}>
-          Methods & Lessons
-        </button>
-        <button type="button" onClick={() => onNavigate('/knowledge')}>
-          Knowledge
-        </button>
-        <button type="button" onClick={() => onNavigate('/repositories/computer-technical-systems')}>
-          Computer Science Tree
-        </button>
-        <button type="button" onClick={() => onNavigate('/repositories/algorithms')}>
-          Algorithms Tree
-        </button>
-        <button type="button" onClick={() => onNavigate('/works')}>
-          Guided Learning Works
-        </button>
-      </section>
-
-      <div className="section-stack">
-        <SectionList
-          title="Methods & Lessons"
-          description="Reusable ways to learn, reflect, collaborate, organize, and build capability."
-          items={['Learning methods', 'Experience lessons', 'Psychology and collaboration']}
-        />
-        <SectionList
-          title="Knowledge"
-          description="Structured knowledge areas for technical, social, historical, and political study."
-          items={[
-            'Computer Science tree: /repositories/computer-technical-systems',
-            'Algorithms tree: /repositories/algorithms',
-            'Markdown articles and notes'
-          ]}
-        />
-        <SectionList
-          title="Guided Learning Works"
-          description="Narrative, visual, documentary, and course formats that guide learners through complex ideas."
-          items={['Archive of Sparks', 'Documentary Projects', 'Visual Explanations', 'Lectures and Live Courses']}
-        />
-      </div>
-
-      <section className="guided-works-home">
-        <div className="knowledge-group-header">
-          <p className="eyebrow">知识引导作品</p>
-          <h2>Guided Learning Works</h2>
-          <p>
-            If systematic articles, original texts, or technical materials feel difficult at first,
-            you can start from our guided learning works. They use stories, interactive scenes,
-            visual explanations, and documentaries to help you enter the knowledge world step by
-            step.
+        <div className="archive-center">
+          <div className="archive-mark" aria-label="Temporary Standard Science mark">
+            <div className="archive-mark-ring">
+              <img
+                src={turingPortrait}
+                alt="Alan Turing at Princeton University in 1936"
+                className="archive-mark-image"
+              />
+            </div>
+            <div className="archive-mark-copy">
+              <h1 id="standard-science-title">Standard Science</h1>
+              <p>Open Knowledge Archive</p>
+            </div>
+          </div>
+          <p className="archive-mark-note">
+            Alan Turing is a temporary placeholder for the future Standard Science logo.
           </p>
         </div>
 
-        <div className="guided-work-grid">
-          <article className="guided-work-card featured">
-            <div>
-              <h3>Archive of Sparks</h3>
-              <p>
-                An open-source interactive knowledge narrative. Start from real-life difficulties,
-                travel through history, compare different explanations, and enter the knowledge
-                platform for deeper study.
-              </p>
-            </div>
-            <button type="button" onClick={() => onNavigate('/works/archive-of-sparks')}>
-              Start Chapter 0
-            </button>
-          </article>
-
-          {['Documentary Projects', 'Visual Explanations', 'Lectures and Live Courses'].map((title) => (
-            <article className="guided-work-card" key={title}>
-              <h3>{title}</h3>
-              <p>Placeholder for future guided learning formats.</p>
-              <button type="button" disabled>
-                Coming soon
-              </button>
-            </article>
-          ))}
-        </div>
+        <section className="archive-domain archive-domain-social" aria-labelledby="social-science-title">
+          <h2 id="social-science-title">Social Science</h2>
+          <div className="archive-subject-list">
+            {socialScience.map((item) => (
+              <SubjectEntry key={item.label} item={item} onNavigate={onNavigate} />
+            ))}
+          </div>
+        </section>
       </section>
-    </>
+
+      <section className="archive-manifesto" aria-labelledby="manifesto-title">
+        <p className="archive-section-kicker">Manifesto</p>
+        <h2 id="manifesto-title">Knowledge should belong to everyone.</h2>
+        <p>
+          Standard Science is an open and free knowledge project built around learning, practice,
+          verification, discussion, and contribution. We begin with Computer Science and Artificial
+          Intelligence, then expand carefully as the archive becomes useful in practice.
+        </p>
+        <button type="button" className="archive-text-action" onClick={() => onNavigate('/manifesto')}>
+          Read the Manifesto →
+        </button>
+      </section>
+
+      <nav className="archive-utility-nav" aria-label="Standard Science utilities">
+        <button type="button" onClick={() => onNavigate('/knowledge')}>
+          Search
+        </button>
+        <button type="button" onClick={() => onNavigate('/meetings')}>
+          Meetings
+        </button>
+        <button type="button" onClick={() => onNavigate('/knowledge')}>
+          Library
+        </button>
+        <a
+          href="https://github.com/rowetaylor998-prog/Standard-Science/blob/main/CONTRIBUTING.md"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Contribute
+        </a>
+        <button type="button" onClick={() => onNavigate('/manifesto')}>
+          About
+        </button>
+      </nav>
+    </div>
   )
 }
