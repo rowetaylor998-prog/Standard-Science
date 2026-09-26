@@ -2,6 +2,14 @@ import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
 import { OpenMeetingRoom } from './pages/OpenMeetingRoom'
 import { HomePage } from './pages/HomePage'
+import { ComputerScienceArchivePage } from './pages/ComputerScienceArchivePage'
+import { ComputerScienceSubjectsPage } from './pages/ComputerScienceSubjectsPage'
+import { ComputerScienceLibraryPage } from './pages/ComputerScienceLibraryPage'
+import { ComputerScientistsPage } from './pages/ComputerScientistsPage'
+import { ComputerScienceHistoryPage } from './pages/ComputerScienceHistoryPage'
+import { ComputerScienceProjectsPage } from './pages/ComputerScienceProjectsPage'
+import { ComputerScienceSearchPage } from './pages/ComputerScienceSearchPage'
+import { PersonalLibraryReaderPage } from './pages/PersonalLibraryReaderPage'
 import { MethodsPage } from './pages/MethodsPage'
 import { KnowledgePage } from './pages/KnowledgePage'
 import { WorksPage } from './pages/WorksPage'
@@ -16,6 +24,20 @@ import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
   '/': HomePage,
+  '/computer-science': ComputerScienceArchivePage,
+  '/computer-science/subjects': ComputerScienceSubjectsPage,
+  '/computer-science/subjects/algorithms': () => (
+    <MarkdownContentPage
+      contentPath="/content/knowledge/computer-science/algorithms"
+      title="Algorithms & Data Structures"
+    />
+  ),
+  '/computer-science/library': ComputerScienceLibraryPage,
+  '/computer-science/library/reader': PersonalLibraryReaderPage,
+  '/computer-science/scientists': ComputerScientistsPage,
+  '/computer-science/history': ComputerScienceHistoryPage,
+  '/computer-science/practice-projects': ComputerScienceProjectsPage,
+  '/computer-science/search': ComputerScienceSearchPage,
   '/meetings': OpenMeetingRoom,
   '/manifesto': () => (
     <MarkdownContentPage contentPath="/content/manifesto/homepage-manifesto" title="Manifesto" />
