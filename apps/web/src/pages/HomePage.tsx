@@ -14,18 +14,19 @@ type Portrait = {
 const leftPortraits: Portrait[] = [
   {
     name: 'Xi Jinping',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Xi_Jinping_portrait_2019.jpg?width=640',
-    objectPosition: '50% 24%',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Xi_Jinping_portrait_2019_%28cropped%29.jpg?width=640',
+    objectPosition: '50% 18%',
     mirrored: true
   },
   {
     name: 'Donald Trump',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_official_portrait%2C_2025_%28headshot%29.jpg?width=640',
-    objectPosition: '50% 22%'
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_October_2020_%28cropped%29.jpg?width=640',
+    objectPosition: '50% 20%',
+    mirrored: true
   },
   {
     name: 'Jensen Huang',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Jensen_huang_stanford_2026-04-30_010.jpg?width=640',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Jensen_huang_stanford_2026-04-30_008.jpg?width=640',
     objectPosition: '50% 24%',
     mirrored: true
   }
@@ -34,20 +35,19 @@ const leftPortraits: Portrait[] = [
 const rightPortraits: Portrait[] = [
   {
     name: 'Elon Musk',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Elon_Musk_Royal_Society_%28cropped%29.jpg?width=640',
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Elon_Musk_Royal_Society_crop.jpg?width=640',
     objectPosition: '50% 24%',
     mirrored: true
   },
   {
     name: 'Jeffrey Epstein',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Mugshot_of_Jeffrey_Epstein%2C_front_view%2C_July_8_2019.png?width=640',
-    objectPosition: '50% 20%'
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Epstein_2013_mugshot.jpg?width=640',
+    objectPosition: '50% 17%'
   },
   {
     name: 'Peter Thiel',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Thiel.jpg?width=640',
-    objectPosition: '50% 22%',
-    mirrored: true
+    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Thiel_by_Gage_Skidmore.jpg?width=640',
+    objectPosition: '50% 18%'
   }
 ]
 
