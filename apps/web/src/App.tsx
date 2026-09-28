@@ -2,6 +2,7 @@ import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
 import { OpenMeetingRoom } from './pages/OpenMeetingRoom'
 import { HomePage } from './pages/HomePage'
+import { LegacyHomePage } from './pages/LegacyHomePage'
 import { ComputerScienceArchivePage } from './pages/ComputerScienceArchivePage'
 import { ComputerScienceSubjectsPage } from './pages/ComputerScienceSubjectsPage'
 import { ComputerScienceLibraryPage } from './pages/ComputerScienceLibraryPage'
@@ -24,6 +25,7 @@ import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
   '/': HomePage,
+  '/legacy-home': LegacyHomePage,
   '/computer-science': ComputerScienceArchivePage,
   '/computer-science/subjects': ComputerScienceSubjectsPage,
   '/computer-science/subjects/algorithms': () => (
