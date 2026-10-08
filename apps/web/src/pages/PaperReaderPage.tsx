@@ -64,3 +64,10 @@ export function PaperReaderPage({ onNavigate, paper }: Props) {
     </div>
   )
 }
+
+export function TransformerReaderPage({ onNavigate }: { onNavigate: (route: RoutePath) => void }) {
+  return <PaperReaderPage onNavigate={onNavigate} paper="transformer" />
+}
+export function AlexNetReaderPage({ onNavigate }: { onNavigate: (route: RoutePath) => void }) {
+  return <PaperReaderPage onNavigate={onNavigate} paper="alexnet" />
+}
