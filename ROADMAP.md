@@ -1,10 +1,19 @@
 # Roadmap
 
-A working roadmap for the open knowledge platform MVP and future experiments.
+## Current
 
-## TODO
+- Stabilize the Standard Science archive homepage.
+- Develop the Computer Science Internet Archive.
+- Add books, papers, standards, manuals, and technical documents to Library.
+- Prefer stable official/open links for long works.
+- Create MIA-style HTML reading pages for selected shorter papers.
+- Keep manual annotations lightweight and local.
+- Expand FAQ, Search, History, Scientists, Subjects, and Practice & Projects.
 
-- Prioritize MVP features across content, web, backend, and AI tutor work.
-- Define Archive of Sparks narrative milestones.
-- Add governance launch milestones.
-- Separate near-term MVP tasks from long-term research tracks.
+## Later
+
+- Improve bibliographic metadata and source provenance.
+- Add durable text anchoring for HTML annotations.
+- Expand beyond Computer Science after the archive model is stable.
+
+Embedded AI tutor, Open Meetings, and the former AI-lab experiments are not part of the current roadmap.

@@ -66,9 +66,7 @@ else
   printf "     Build it with: cd apps/web && npm run build\n"
 fi
 
-print_header "Environment Examples"
-check_file ".env.example"
-check_file "backend/.env.example"
+print_header "Environment Example"
 check_file "apps/web/.env.example"
 
 print_header "Result"

@@ -75,7 +75,7 @@ trap cleanup EXIT
 trap 'exit 130' INT
 trap 'exit 143' TERM
 
-print_header "Be Knowledgeable MVP Development"
+print_header "Standard Science Development"
 printf "Backend:  http://127.0.0.1:8000\n"
 printf "Frontend: http://127.0.0.1:5173\n"
 
