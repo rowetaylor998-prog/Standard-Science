@@ -3123,3 +3123,11 @@ a.cs-archive-entry:focus-visible {
     grid-template-columns: 1fr;
   }
 }
+
+/* Archive library: restrained photographic surround and readable ivory paper */
+.cs-library-photo-background { background: #efece5; padding: 28px 18px 60px; min-height: 100vh; }
+.cs-library-photo-background .cs-section-page { background: #faf8f1; box-shadow: 0 4px 28px #1b261520; }
+.cs-paper-reading { max-width: 760px; margin: 0 auto; font: 18px/1.8 Georgia, 'Times New Roman', serif; color: #242321; }
+.cs-paper-reading h2 { font-size: 1.45em; margin-top: 32px; }
+.cs-paper-reading a { color: #102d7a; text-decoration: underline; }
+.cs-paper-authors, .cs-paper-note { color: #666; font-size: .9em; }

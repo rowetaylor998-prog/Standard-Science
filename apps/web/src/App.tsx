@@ -5,6 +5,7 @@ import { LessonsPage } from './pages/LessonsPage'
 import { ComputerScienceArchivePage } from './pages/ComputerScienceArchivePage'
 import { ComputerScienceSubjectsPage } from './pages/ComputerScienceSubjectsPage'
 import { ComputerScienceLibraryPage } from './pages/ComputerScienceLibraryPage'
+import { ComputerSciencePaperPage } from './pages/ComputerSciencePaperPage'
 import { ComputerScientistsPage } from './pages/ComputerScientistsPage'
 import { ComputerScienceHistoryPage } from './pages/ComputerScienceHistoryPage'
 import { ComputerScienceProjectsPage } from './pages/ComputerScienceProjectsPage'
@@ -23,6 +24,8 @@ const routes = {
     />
   ),
   '/computer-science/library': ComputerScienceLibraryPage,
+  '/computer-science/library/attention-is-all-you-need': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerSciencePaperPage {...props} paperId="transformer" />,
+  '/computer-science/library/imagenet-classification': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerSciencePaperPage {...props} paperId="imagenet" />,
   '/computer-science/scientists': ComputerScientistsPage,
   '/computer-science/history': ComputerScienceHistoryPage,
   '/computer-science/practice-projects': ComputerScienceProjectsPage,
