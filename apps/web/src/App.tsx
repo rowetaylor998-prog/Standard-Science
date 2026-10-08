@@ -2,6 +2,8 @@ import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
 import { OpenMeetingRoom } from './pages/OpenMeetingRoom'
 import { HomePage } from './pages/HomePage'
+import { LibraryPage } from './pages/LibraryPage'
+import { PaperReaderPage } from './pages/PaperReaderPage'
 import { MethodsPage } from './pages/MethodsPage'
 import { KnowledgePage } from './pages/KnowledgePage'
 import { WorksPage } from './pages/WorksPage'
@@ -16,6 +18,9 @@ import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
   '/': HomePage,
+  '/library': LibraryPage,
+  '/library/attention-is-all-you-need': (props: { onNavigate: (route: RoutePath) => void }) => <PaperReaderPage {...props} paper="transformer" />,
+  '/library/alexnet': (props: { onNavigate: (route: RoutePath) => void }) => <PaperReaderPage {...props} paper="alexnet" />,
   '/meetings': OpenMeetingRoom,
   '/manifesto': () => (
     <MarkdownContentPage contentPath="/content/manifesto/homepage-manifesto" title="Manifesto" />
