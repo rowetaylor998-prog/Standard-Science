@@ -9,9 +9,11 @@ type PageProps = {
 export function HomePage({ onNavigate }: PageProps) {
   return (
     <>
-      <section className="hero">
-        <p className="eyebrow">Open knowledge platform MVP</p>
+      <section className="hero gala-hero">
+        <p className="eyebrow">Standard Science · Open Knowledge</p>
         <h1>Be Knowledgeable. Be Free. Be Independent. Be Capable.</h1>
+        <p className="hero-subtitle">Science belongs to everyone. Read the original works, study the foundations, and build what comes next.</p>
+        <button className="hero-library-action" type="button" onClick={() => onNavigate('/library')}>Explore the Library →</button>
       </section>
 
       <section className="homepage-manifesto">
@@ -19,6 +21,7 @@ export function HomePage({ onNavigate }: PageProps) {
       </section>
 
       <section className="home-actions" aria-label="Main sections">
+        <button type="button" onClick={() => onNavigate('/library')}>Reading Library</button>
         <button type="button" onClick={() => onNavigate('/manifesto')}>
           Open Manifesto
         </button>
