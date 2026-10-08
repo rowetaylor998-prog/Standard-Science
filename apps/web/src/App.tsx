@@ -1,8 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
 import { Layout } from './components/Layout'
-import { OpenMeetingRoom } from './pages/OpenMeetingRoom'
 import { HomePage } from './pages/HomePage'
-import { LegacyHomePage } from './pages/LegacyHomePage'
+import { LessonsPage } from './pages/LessonsPage'
 import { ComputerScienceArchivePage } from './pages/ComputerScienceArchivePage'
 import { ComputerScienceSubjectsPage } from './pages/ComputerScienceSubjectsPage'
 import { ComputerScienceLibraryPage } from './pages/ComputerScienceLibraryPage'
@@ -11,21 +10,11 @@ import { ComputerScienceHistoryPage } from './pages/ComputerScienceHistoryPage'
 import { ComputerScienceProjectsPage } from './pages/ComputerScienceProjectsPage'
 import { ComputerScienceSearchPage } from './pages/ComputerScienceSearchPage'
 import { PersonalLibraryReaderPage } from './pages/PersonalLibraryReaderPage'
-import { MethodsPage } from './pages/MethodsPage'
-import { KnowledgePage } from './pages/KnowledgePage'
-import { WorksPage } from './pages/WorksPage'
-import { ArchiveOfSparks } from './pages/ArchiveOfSparks'
-import { PeoplePage } from './pages/PeoplePage'
-import {
-  LegacyKnowledgeTreePage,
-  algorithmTreeItems,
-  computerTreeItems
-} from './pages/LegacyKnowledgeTreePage'
 import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
   '/': HomePage,
-  '/legacy-home': LegacyHomePage,
+  '/lessons': LessonsPage,
   '/computer-science': ComputerScienceArchivePage,
   '/computer-science/subjects': ComputerScienceSubjectsPage,
   '/computer-science/subjects/algorithms': () => (
@@ -40,76 +29,26 @@ const routes = {
   '/computer-science/history': ComputerScienceHistoryPage,
   '/computer-science/practice-projects': ComputerScienceProjectsPage,
   '/computer-science/search': ComputerScienceSearchPage,
-  '/meetings': OpenMeetingRoom,
   '/manifesto': () => (
     <MarkdownContentPage contentPath="/content/manifesto/homepage-manifesto" title="Manifesto" />
   ),
-  '/methods-and-lessons': MethodsPage,
-  '/knowledge': KnowledgePage,
-  '/people': PeoplePage,
-  '/repositories/computer-technical-systems': () => (
-    <LegacyKnowledgeTreePage
-      title="Introduction to Modern Computer Science"
-      sourceFile="repositories/computer-technical-systems.md"
-      componentFile=".vitepress/theme/Components/ComputerTree.vue"
-      description="The existing structured Computer Science knowledge tree, connected into the new MVP frontend without rewriting the old VitePress source."
-      items={computerTreeItems}
-      relatedLinks={[
-        { label: 'Open Algorithms Tree', href: '/repositories/algorithms' },
-        { label: 'Markdown Introduction', href: '/content/knowledge/computer-science/introduction' }
-      ]}
-    />
-  ),
-  '/repositories/algorithms': () => (
-    <LegacyKnowledgeTreePage
-      title="General Introduction to Algorithms"
-      sourceFile="repositories/algorithms.md"
-      componentFile=".vitepress/theme/Components/AlgorithmTree.vue"
-      description="The existing structured Algorithms knowledge tree, connected into the new MVP frontend while preserving the original VitePress component."
-      items={algorithmTreeItems}
-      relatedLinks={[
-        { label: 'Open Computer Science Tree', href: '/repositories/computer-technical-systems' },
-        { label: 'Markdown Algorithms Notes', href: '/content/knowledge/computer-science/algorithms' }
-      ]}
-    />
-  ),
-  '/works': WorksPage,
-  '/works/archive-of-sparks': ArchiveOfSparks,
   '/content/methods-and-lessons/learning-methods': () => (
-    <MarkdownContentPage contentPath="/content/methods-and-lessons/learning-methods" title="Methods & Lessons" />
+    <MarkdownContentPage contentPath="/content/methods-and-lessons/learning-methods" title="Lessons" />
   ),
   '/content/methods-and-lessons/experience-lessons': () => (
-    <MarkdownContentPage contentPath="/content/methods-and-lessons/experience-lessons" title="Methods & Lessons" />
+    <MarkdownContentPage contentPath="/content/methods-and-lessons/experience-lessons" title="Lessons" />
   ),
   '/content/methods-and-lessons/psychology-learning-collaboration': () => (
     <MarkdownContentPage
       contentPath="/content/methods-and-lessons/psychology-learning-collaboration"
-      title="Methods & Lessons"
+      title="Lessons"
     />
   ),
   '/content/knowledge/computer-science/introduction': () => (
-    <MarkdownContentPage contentPath="/content/knowledge/computer-science/introduction" title="Knowledge" />
+    <MarkdownContentPage contentPath="/content/knowledge/computer-science/introduction" title="Computer Science" />
   ),
   '/content/knowledge/computer-science/algorithms': () => (
-    <MarkdownContentPage contentPath="/content/knowledge/computer-science/algorithms" title="Knowledge" />
-  ),
-  '/content/knowledge/marxism-political-economy/introduction': () => (
-    <MarkdownContentPage
-      contentPath="/content/knowledge/marxism-political-economy/introduction"
-      title="Knowledge"
-    />
-  ),
-  '/knowledge/marxism-political-economy/mlm-manifesto': () => (
-    <MarkdownContentPage
-      contentPath="/content/knowledge/marxism-political-economy/mlm-manifesto"
-      title="Marxism / Political Economy"
-    />
-  ),
-  '/content/works/archive-of-sparks/chapter-0-trapped-people': () => (
-    <MarkdownContentPage
-      contentPath="/content/works/archive-of-sparks/chapter-0-trapped-people"
-      title="Archive of Sparks"
-    />
+    <MarkdownContentPage contentPath="/content/knowledge/computer-science/algorithms" title="Computer Science" />
   )
 }
 
@@ -140,7 +79,7 @@ export function App() {
 
   const Page = useMemo(() => {
     if (route.startsWith('/content/') && !(route in routes)) {
-      return () => <MarkdownContentPage contentPath={route} title="Knowledge" />
+      return () => <MarkdownContentPage contentPath={route} title="Archive" />
     }
 
     return routes[route as StaticRoutePath]
@@ -153,7 +92,7 @@ export function App() {
   }
 
   return (
-    <Layout currentRoute={route} onNavigate={navigate}>
+    <Layout currentRoute={route}>
       <Page onNavigate={navigate} />
     </Layout>
   )

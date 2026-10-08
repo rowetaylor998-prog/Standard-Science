@@ -84,8 +84,7 @@ const mainArchiveLinks: ArchiveLink[] = [
 ]
 
 const archiveTools: ArchiveLink[] = [
-  { label: 'Open Meetings', route: '/meetings', tone: 'green' },
-  { label: 'Lessons', route: '/methods-and-lessons', tone: 'green' },
+  { label: 'Lessons', route: '/lessons', tone: 'green' },
   { label: 'About the Archive', status: 'future', tone: 'green' },
   { label: 'Search', route: '/computer-science/search', tone: 'orange' }
 ]

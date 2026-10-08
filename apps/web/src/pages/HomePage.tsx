@@ -4,187 +4,148 @@ type PageProps = {
   onNavigate: (route: RoutePath) => void
 }
 
-type Portrait = {
-  name: string
-  src: string
-  objectPosition: string
-  mirrored?: boolean
+type SubjectItem = {
+  label: string
+  route?: RoutePath
+  emphasis?: boolean
 }
 
-const leftPortraits: Portrait[] = [
+const naturalScience: SubjectItem[] = [
+  { label: 'Mathematics' },
+  { label: 'Physics' },
+  { label: 'Chemistry' },
+  { label: 'Biology' },
   {
-    name: 'Xi Jinping',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Xi_Jinping_portrait_2019_%28cropped%29.jpg?width=640',
-    objectPosition: '50% 18%',
-    mirrored: true
+    label: 'Computer Science',
+    route: '/computer-science',
+    emphasis: true
   },
-  {
-    name: 'Donald Trump',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Donald_Trump_October_2020_%28cropped%29.jpg?width=640',
-    objectPosition: '50% 20%',
-    mirrored: true
-  },
-  {
-    name: 'Jensen Huang',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Jensen_huang_stanford_2026-04-30_008.jpg?width=640',
-    objectPosition: '50% 24%',
-    mirrored: true
-  }
+  { label: 'Artificial Intelligence', emphasis: true }
 ]
 
-const rightPortraits: Portrait[] = [
-  {
-    name: 'Elon Musk',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Elon_Musk_Royal_Society_crop.jpg?width=640',
-    objectPosition: '50% 24%',
-    mirrored: true
-  },
-  {
-    name: 'Jeffrey Epstein',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Epstein_2013_mugshot.jpg?width=640',
-    objectPosition: '50% 17%'
-  },
-  {
-    name: 'Peter Thiel',
-    src: 'https://commons.wikimedia.org/wiki/Special:FilePath/Peter_Thiel_by_Gage_Skidmore.jpg?width=640',
-    objectPosition: '50% 18%'
-  }
+const socialScience: SubjectItem[] = [
+  { label: 'Economics' },
+  { label: 'Political Science' },
+  { label: 'Law' },
+  { label: 'Military Science' },
+  { label: 'Political Thought & Ideology' }
 ]
 
-function PortraitStack({ portraits, side }: { portraits: Portrait[]; side: 'left' | 'right' }) {
-  return (
-    <div className={`science-home-portrait-stack science-home-portraits-${side}`} aria-label={`${side} portrait column`}>
-      {portraits.map((portrait) => (
-        <figure className="science-home-portrait-frame" key={portrait.name}>
-          <img
-            src={portrait.src}
-            alt={portrait.name}
-            className={portrait.mirrored ? 'science-home-portrait-image mirrored' : 'science-home-portrait-image'}
-            style={{ objectPosition: portrait.objectPosition }}
-            loading="eager"
-            referrerPolicy="no-referrer"
-          />
-        </figure>
-      ))}
-    </div>
-  )
-}
+const turingPortrait =
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Alan_Turing_(1912-1954)_in_1936_at_Princeton_University_(b%26w).jpg'
 
-function HomeTextLink({
-  children,
-  route,
-  className,
+function SubjectEntry({
+  item,
   onNavigate
 }: {
-  children: string
-  route?: RoutePath
-  className: string
+  item: SubjectItem
   onNavigate: (route: RoutePath) => void
 }) {
-  if (!route) {
-    return <span className={className}>{children}</span>
+  if (item.route) {
+    return (
+      <button
+        type="button"
+        className={item.emphasis ? 'archive-subject-link primary' : 'archive-subject-link'}
+        onClick={() => onNavigate(item.route!)}
+      >
+        {item.label}
+      </button>
+    )
   }
 
   return (
-    <button type="button" className={className} onClick={() => onNavigate(route)}>
-      {children}
-    </button>
+    <span
+      className={item.emphasis ? 'archive-subject-link future primary' : 'archive-subject-link future'}
+      title="Archive under construction"
+      aria-label={`${item.label}, archive under construction`}
+    >
+      {item.label}
+    </span>
   )
 }
 
 export function HomePage({ onNavigate }: PageProps) {
   return (
-    <div className="standard-science-home">
-      <section className="science-home-top" aria-labelledby="standard-science-title">
-        <PortraitStack portraits={leftPortraits} side="left" />
+    <div className="archive-home">
+      <section className="archive-orbit" aria-labelledby="standard-science-title">
+        <div className="archive-philosophy">
+          <span className="archive-major-field future" title="Archive under construction">
+            Philosophy
+          </span>
+        </div>
 
-        <div className="science-home-center">
-          <h1 id="standard-science-title" className="science-home-title">
-            Standard Science
-          </h1>
-
-          <div className="science-home-theory-map">
-            <HomeTextLink
-              route="/knowledge"
-              className="science-home-text-action science-home-major"
-              onNavigate={onNavigate}
-            >
-              Theory
-            </HomeTextLink>
-
-            <section className="science-home-field-group" aria-label="Philosophy">
-              <HomeTextLink className="science-home-field" onNavigate={onNavigate}>
-                Philosophy
-              </HomeTextLink>
-            </section>
-
-            <section className="science-home-field-group" aria-label="Natural Science">
-              <HomeTextLink className="science-home-field" onNavigate={onNavigate}>
-                Natural Science
-              </HomeTextLink>
-              <div className="science-home-subject-row">
-                <span>Mathematics</span>
-                <span>Physics</span>
-                <HomeTextLink
-                  route="/computer-science"
-                  className="science-home-text-action science-home-subject-link"
-                  onNavigate={onNavigate}
-                >
-                  Computer Science
-                </HomeTextLink>
-              </div>
-            </section>
-
-            <section className="science-home-field-group" aria-label="Social Science">
-              <HomeTextLink className="science-home-field" onNavigate={onNavigate}>
-                Social Science
-              </HomeTextLink>
-              <div className="science-home-subject-row science-home-social-row">
-                <span>Politics</span>
-                <span>Economics</span>
-                <span>Military</span>
-                <span>Ideology</span>
-              </div>
-            </section>
+        <section className="archive-domain archive-domain-natural" aria-labelledby="natural-science-title">
+          <h2 id="natural-science-title">Natural Science</h2>
+          <div className="archive-subject-list">
+            {naturalScience.map((item) => (
+              <SubjectEntry key={item.label} item={item} onNavigate={onNavigate} />
+            ))}
           </div>
+        </section>
 
-          <HomeTextLink
-            route="/methods-and-lessons"
-            className="science-home-text-action science-home-major science-home-lessons"
-            onNavigate={onNavigate}
-          >
-            Lessons
-          </HomeTextLink>
+        <div className="archive-center">
+          <div className="archive-mark" aria-label="Temporary Standard Science mark">
+            <div className="archive-mark-ring">
+              <img
+                src={turingPortrait}
+                alt="Alan Turing at Princeton University in 1936"
+                className="archive-mark-image"
+              />
+            </div>
+            <div className="archive-mark-copy">
+              <h1 id="standard-science-title">Standard Science</h1>
+              <p>Open Knowledge Archive</p>
+            </div>
+          </div>
+          <p className="archive-mark-note">
+            Alan Turing is a temporary placeholder for the future Standard Science logo.
+          </p>
         </div>
 
-        <PortraitStack portraits={rightPortraits} side="right" />
+        <section className="archive-domain archive-domain-social" aria-labelledby="social-science-title">
+          <h2 id="social-science-title">Social Science</h2>
+          <div className="archive-subject-list">
+            {socialScience.map((item) => (
+              <SubjectEntry key={item.label} item={item} onNavigate={onNavigate} />
+            ))}
+          </div>
+        </section>
       </section>
 
-      <section className="science-home-practice" aria-label="Practice">
-        <HomeTextLink
-          route="/works"
-          className="science-home-text-action science-home-major"
-          onNavigate={onNavigate}
-        >
-          Practice
-        </HomeTextLink>
-      </section>
-
-      <section className="science-home-trilogy" aria-labelledby="science-home-trilogy-title">
-        <button
-          type="button"
-          id="science-home-trilogy-title"
-          className="science-home-text-action science-home-trilogy-title"
-          onClick={() => onNavigate('/manifesto')}
-        >
-          《争霸三部曲》
+      <section className="archive-manifesto" aria-labelledby="manifesto-title">
+        <p className="archive-section-kicker">Manifesto</p>
+        <h2 id="manifesto-title">Knowledge should belong to everyone.</h2>
+        <p>
+          Standard Science is an open and free knowledge project built around learning, practice,
+          verification, discussion, and contribution. We begin with Computer Science and Artificial
+          Intelligence, then expand carefully as the archive becomes useful in practice.
+        </p>
+        <button type="button" className="archive-text-action" onClick={() => onNavigate('/manifesto')}>
+          Read the Manifesto →
         </button>
-        <div className="science-home-trilogy-parts" aria-label="Trilogy parts">
-          <span>One</span>
-          <span>Two</span>
-          <span>Three</span>
-        </div>
       </section>
+
+      <nav className="archive-utility-nav" aria-label="Standard Science utilities">
+        <button type="button" onClick={() => onNavigate('/computer-science/search')}>
+          Search
+        </button>
+        <button type="button" onClick={() => onNavigate('/lessons')}>
+          Lessons
+        </button>
+        <button type="button" onClick={() => onNavigate('/computer-science/library')}>
+          Library
+        </button>
+        <a
+          href="https://github.com/rowetaylor998-prog/Standard-Science/blob/main/CONTRIBUTING.md"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Contribute
+        </a>
+        <button type="button" onClick={() => onNavigate('/manifesto')}>
+          About
+        </button>
+      </nav>
     </div>
   )
 }
