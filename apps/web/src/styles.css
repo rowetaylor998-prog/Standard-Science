@@ -1685,16 +1685,6 @@ p {
   font-style: italic;
 }
 
-.annotation-ai-result {
-  display: grid;
-  gap: 8px;
-  margin-top: 12px;
-  padding: 12px;
-  border-left: 4px solid #7d8f69;
-  border-radius: 6px;
-  background: #eef2ea;
-}
-
 .annotation-ai-result h4 {
   margin: 0;
   color: #141b23;
@@ -1703,12 +1693,6 @@ p {
 
 .annotation-ai-result p {
   margin-bottom: 0;
-}
-
-.annotation-ai-error {
-  margin-top: 10px;
-  color: #9f1d20;
-  font-weight: 700;
 }
 
 @media (max-width: 760px) {
