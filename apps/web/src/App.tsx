@@ -9,7 +9,6 @@ import { ComputerScientistsPage } from './pages/ComputerScientistsPage'
 import { ComputerScienceHistoryPage } from './pages/ComputerScienceHistoryPage'
 import { ComputerScienceProjectsPage } from './pages/ComputerScienceProjectsPage'
 import { ComputerScienceSearchPage } from './pages/ComputerScienceSearchPage'
-import { PersonalLibraryReaderPage } from './pages/PersonalLibraryReaderPage'
 import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
@@ -24,7 +23,6 @@ const routes = {
     />
   ),
   '/computer-science/library': ComputerScienceLibraryPage,
-  '/computer-science/library/reader': PersonalLibraryReaderPage,
   '/computer-science/scientists': ComputerScientistsPage,
   '/computer-science/history': ComputerScienceHistoryPage,
   '/computer-science/practice-projects': ComputerScienceProjectsPage,
