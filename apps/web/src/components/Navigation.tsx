@@ -5,6 +5,7 @@ const navItems: Array<{ label: string; route: RoutePath }> = [
   { label: 'Manifesto', route: '/manifesto' },
   { label: 'Methods & Lessons', route: '/methods-and-lessons' },
   { label: 'Knowledge', route: '/knowledge' },
+  { label: 'Library', route: '/library' },
   { label: 'Open Meeting Room', route: '/meetings' },
   { label: '人物索引', route: '/people' },
   { label: 'Guided Learning Works', route: '/works' },
