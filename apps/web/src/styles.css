@@ -1922,9 +1922,9 @@ button.archive-subject-link:focus-visible,
 .archive-mark-ring {
   display: grid;
   place-items: center;
-  width: clamp(210px, 24vw, 300px);
-  aspect-ratio: 1;
-  padding: 14px;
+  width: clamp(250px, 28vw, 340px);
+  aspect-ratio: 1.38 / 1;
+  padding: 12px;
   border: 14px solid #111111;
   border-radius: 50%;
   background: #ffffff;
@@ -1934,9 +1934,9 @@ button.archive-subject-link:focus-visible,
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: center 20%;
+  object-position: center 38%;
   border-radius: 50%;
-  filter: grayscale(1) contrast(1.04);
+  filter: none;
 }
 
 .archive-mark-copy {

@@ -31,8 +31,7 @@ const socialScience: SubjectItem[] = [
   { label: 'Political Thought & Ideology' }
 ]
 
-const epsteinPortrait =
-  'https://commons.wikimedia.org/wiki/Special:FilePath/Epstein_2013_mugshot.jpg?width=900'
+const epsteinPortrait = '/epstein-trump-home.webp'
 
 function SubjectEntry({
   item,
@@ -88,7 +87,7 @@ export function HomePage({ onNavigate }: PageProps) {
             <div className="archive-mark-ring">
               <img
                 src={epsteinPortrait}
-                alt="Jeffrey Epstein portrait"
+                alt="Jeffrey Epstein and Donald Trump"
                 className="archive-mark-image"
               />
             </div>
@@ -98,7 +97,7 @@ export function HomePage({ onNavigate }: PageProps) {
             </div>
           </div>
           <p className="archive-mark-note">
-            Jeffrey Epstein is a temporary placeholder for the future Standard Science logo.
+            This image is a temporary placeholder for the future Standard Science logo.
           </p>
         </div>
 
