@@ -2327,9 +2327,9 @@ button.archive-subject-link:focus-visible,
 
 .cs-archive-tools {
   left: 56%;
-  top: 304px;
-  width: 19%;
-  gap: 10px;
+  top: 270px;
+  width: 21%;
+  gap: 12px;
 }
 
 .cs-archive-entry {
@@ -3131,3 +3131,26 @@ a.cs-archive-entry:focus-visible {
 .cs-paper-reading h2 { font-size: 1.45em; margin-top: 32px; }
 .cs-paper-reading a { color: #102d7a; text-decoration: underline; }
 .cs-paper-authors, .cs-paper-note { color: #666; font-size: .9em; }
+
+
+.cs-faq-list {
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid #b8b4a6;
+}
+.cs-faq-entry {
+  padding: 22px 0;
+  border-bottom: 1px solid #c9c5b8;
+}
+.cs-faq-entry h2 {
+  margin: 0 0 7px;
+  color: #0a2f8e;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+}
+.cs-faq-entry p {
+  margin: 0;
+  color: #3e3d39;
+  font-size: 15px;
+  line-height: 1.65;
+}

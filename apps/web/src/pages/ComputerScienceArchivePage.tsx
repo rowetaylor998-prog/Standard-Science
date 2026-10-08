@@ -84,6 +84,7 @@ const mainArchiveLinks: ArchiveLink[] = [
 ]
 
 const archiveTools: ArchiveLink[] = [
+  { label: 'FAQ', route: '/computer-science/faq', tone: 'green' },
   { label: 'Lessons', route: '/lessons', tone: 'green' },
   { label: 'About the Archive', status: 'future', tone: 'green' },
   { label: 'Search', route: '/computer-science/search', tone: 'orange' }

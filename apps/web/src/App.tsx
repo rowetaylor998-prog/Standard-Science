@@ -10,6 +10,7 @@ import { ComputerScientistsPage } from './pages/ComputerScientistsPage'
 import { ComputerScienceHistoryPage } from './pages/ComputerScienceHistoryPage'
 import { ComputerScienceProjectsPage } from './pages/ComputerScienceProjectsPage'
 import { ComputerScienceSearchPage } from './pages/ComputerScienceSearchPage'
+import { ComputerScienceFaqPage } from './pages/ComputerScienceFaqPage'
 import { MarkdownContentPage } from './pages/MarkdownContentPage'
 
 const routes = {
@@ -30,6 +31,7 @@ const routes = {
   '/computer-science/history': ComputerScienceHistoryPage,
   '/computer-science/practice-projects': ComputerScienceProjectsPage,
   '/computer-science/search': ComputerScienceSearchPage,
+  '/computer-science/faq': ComputerScienceFaqPage,
   '/manifesto': () => (
     <MarkdownContentPage contentPath="/content/manifesto/homepage-manifesto" title="Manifesto" />
   ),
