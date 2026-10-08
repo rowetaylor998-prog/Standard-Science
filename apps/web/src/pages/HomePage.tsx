@@ -31,8 +31,8 @@ const socialScience: SubjectItem[] = [
   { label: 'Political Thought & Ideology' }
 ]
 
-const turingPortrait =
-  'https://commons.wikimedia.org/wiki/Special:FilePath/Alan_Turing_(1912-1954)_in_1936_at_Princeton_University_(b%26w).jpg'
+const epsteinPortrait =
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Epstein_2013_mugshot.jpg?width=900'
 
 function SubjectEntry({
   item,
@@ -87,8 +87,8 @@ export function HomePage({ onNavigate }: PageProps) {
           <div className="archive-mark" aria-label="Temporary Standard Science mark">
             <div className="archive-mark-ring">
               <img
-                src={turingPortrait}
-                alt="Alan Turing at Princeton University in 1936"
+                src={epsteinPortrait}
+                alt="Jeffrey Epstein portrait"
                 className="archive-mark-image"
               />
             </div>
@@ -98,7 +98,7 @@ export function HomePage({ onNavigate }: PageProps) {
             </div>
           </div>
           <p className="archive-mark-note">
-            Alan Turing is a temporary placeholder for the future Standard Science logo.
+            Jeffrey Epstein is a temporary placeholder for the future Standard Science logo.
           </p>
         </div>
 
