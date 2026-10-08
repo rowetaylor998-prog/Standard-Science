@@ -1,7 +1,7 @@
 <!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Attention Is All You Need — Standard Science</title><style>
 :root{--paper:#f6f0df;--ink:#25231f;--blue:#111a82;--green:#315b32;--rule:#c9bea6;--outer:#07100c}
 *{box-sizing:border-box}html{background:var(--outer);scroll-behavior:smooth}body{margin:0;color:var(--ink);font-family:Georgia,"Times New Roman",serif;background:radial-gradient(circle at 50% 0,#243026 0,#07100c 55%);line-height:1.58}
-a{color:var(--blue)}.topbar{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:9px 18px;background:rgba(246,240,223,.96);border-bottom:1px solid #b9ad94;font:14px Arial,sans-serif}.topbar a{text-decoration:none}.paper{width:min(940px,calc(100% - 32px));margin:22px auto 70px;padding:52px 68px 80px;background:var(--paper);border:4px solid #8faa87;box-shadow:0 18px 58px rgba(0,0,0,.38)}header{text-align:center;border-bottom:1px solid var(--rule);padding-bottom:28px;margin-bottom:30px}h1{margin:0 0 20px;font-size:45px;font-weight:500;line-height:1.06;color:#1a2419}.authors{max-width:760px;margin:0 auto;color:#35332e;font-size:16px}.meta{margin-top:12px;color:#756c5d;font:13px Arial,sans-serif}h2{margin:42px 0 16px;padding-bottom:6px;border-bottom:1px solid var(--rule);font-size:27px;font-weight:500;color:#193b20}h2 span,h3 span{color:#7a4c20;margin-right:7px}h3{margin:30px 0 10px;font-size:21px;font-weight:600;color:#283c2b}p{margin:0 0 15px;text-align:justify}ul{margin:10px 0 18px 25px}li{margin:7px 0}.equation{overflow-x:auto;margin:20px auto;padding:14px 18px;text-align:center;background:#efe7d3;border-block:1px solid #d5c7aa}.equation code{font:17px/1.7 "Times New Roman",serif;white-space:nowrap}figure{margin:28px auto;text-align:center}figure img{max-width:100%;height:auto;background:white;border:1px solid #d2c7b1}.figure-pair>div{display:flex;align-items:flex-start;justify-content:center;gap:14px}.figure-pair img{max-width:48%}figcaption{margin:8px auto 12px;max-width:760px;font-size:14px;color:#5a5145;text-align:left}.table-figure img{width:100%}.table-figure figcaption{font-weight:600}.references{padding-left:28px}.references li{padding-left:6px;margin:0 0 10px;text-align:left;font-size:15px}.footnote{font-size:13px;color:#6c6254}.source-table{overflow-x:auto;margin:18px 0 28px;padding:14px;background:#fffaf0;border:1px solid #d8cdb6;font:13px/1.45 "Courier New",monospace;white-space:pre-wrap}.source-figure-box{padding:40px 18px;background:#eee5d2;border:1px solid #d2c6ae;font:16px Arial,sans-serif}.source-figure-box a{font-weight:700}.source-note{margin:0 0 24px;padding:12px 14px;border-left:3px solid #9b814f;background:#efe5cf;color:#594c38;font:13px/1.55 Arial,sans-serif}.annotation-launch{position:fixed;right:20px;bottom:20px;z-index:40;border:1px solid #315b32;background:#315b32;color:white;padding:10px 13px;cursor:pointer;font-weight:700}.selection-note{position:fixed;z-index:50;display:none;width:min(360px,calc(100vw - 24px));padding:12px;background:#fffdf6;border:1px solid #8b806a;box-shadow:0 10px 30px rgba(0,0,0,.26);font-family:Arial,sans-serif}.selection-note textarea{width:100%;min-height:90px;margin:8px 0;padding:8px}.selection-note .quote{max-height:80px;overflow:auto;font-size:12px;color:#666}.selection-note button{margin-right:7px}.notes-drawer{position:fixed;z-index:45;top:0;right:0;width:min(390px,92vw);height:100vh;overflow:auto;padding:20px;background:#f8f2e5;border-left:2px solid #80987a;box-shadow:-8px 0 30px rgba(0,0,0,.25);transform:translateX(102%);transition:transform .18s ease;font-family:Arial,sans-serif}.notes-drawer.open{transform:translateX(0)}.notes-drawer h2{font-family:Georgia,serif;margin-top:0}.note-item{padding:12px 0;border-top:1px solid #ccc1ab}.note-quote{font:13px/1.4 Georgia,serif;color:#615849}.note-text{font-size:14px}.note-item button{border:0;background:transparent;color:#8b1e1e;cursor:pointer;padding:0}.close-notes{float:right}.toc{columns:2;column-gap:32px;margin:18px 0 28px;padding:14px 18px;background:#efe8d6;border:1px solid #d3c8ae;font:14px/1.7 Arial,sans-serif}.toc a{display:block;text-decoration:none}.toc a:hover{text-decoration:underline}@media(max-width:720px){.paper{width:min(100% - 12px,940px);padding:30px 20px 55px;border-width:3px}h1{font-size:35px}.toc{columns:1}.figure-pair>div{display:block}.figure-pair img{max-width:100%;margin-bottom:8px}.equation code{font-size:15px}}
+a{color:var(--blue)}.topbar{position:sticky;top:0;z-index:20;display:flex;flex-wrap:wrap;align-items:center;gap:14px;padding:9px 18px;background:rgba(246,240,223,.96);border-bottom:1px solid #b9ad94;font:14px Arial,sans-serif}.topbar a{text-decoration:none}.paper{width:min(940px,calc(100% - 32px));margin:22px auto 70px;padding:52px 68px 80px;background:var(--paper);border:4px solid #8faa87;box-shadow:0 18px 58px rgba(0,0,0,.38)}header{text-align:center;border-bottom:1px solid var(--rule);padding-bottom:28px;margin-bottom:30px}h1{margin:0 0 20px;font-size:45px;font-weight:500;line-height:1.06;color:#1a2419}.authors{max-width:760px;margin:0 auto;color:#35332e;font-size:16px}.meta{margin-top:12px;color:#756c5d;font:13px Arial,sans-serif}h2{margin:42px 0 16px;padding-bottom:6px;border-bottom:1px solid var(--rule);font-size:27px;font-weight:500;color:#193b20}h2 span,h3 span{color:#7a4c20;margin-right:7px}h3{margin:30px 0 10px;font-size:21px;font-weight:600;color:#283c2b}p{margin:0 0 15px;text-align:justify}ul{margin:10px 0 18px 25px}li{margin:7px 0}.equation{overflow-x:auto;margin:20px auto;padding:14px 18px;text-align:center;background:#efe7d3;border-block:1px solid #d5c7aa}.equation code{font:17px/1.7 "Times New Roman",serif;white-space:nowrap}figure{margin:28px auto;text-align:center}figure img{max-width:100%;height:auto;background:white;border:1px solid #d2c7b1}.figure-pair>div{display:flex;align-items:flex-start;justify-content:center;gap:14px}.figure-pair img{max-width:48%}figcaption{margin:8px auto 12px;max-width:760px;font-size:14px;color:#5a5145;text-align:left}.table-figure img{width:100%}.table-figure figcaption{font-weight:600}.references{padding-left:28px}.references li{padding-left:6px;margin:0 0 10px;text-align:left;font-size:15px}.footnote{font-size:13px;color:#6c6254}.paper-table-wrap{overflow-x:auto;margin:18px 0 30px;border:1px solid #d8cdb6;background:#fffaf0}.paper-table{width:100%;border-collapse:collapse;min-width:640px;font:14px/1.42 Georgia,"Times New Roman",serif;font-variant-numeric:tabular-nums}.paper-table.wide{min-width:980px;font-size:13px}.paper-table th,.paper-table td{padding:8px 10px;border-right:1px solid #e0d5bf;border-bottom:1px solid #e0d5bf;vertical-align:middle;text-align:center}.paper-table th{background:#eee4cf;color:#2d362d;font-weight:700}.paper-table td:first-child,.paper-table th:first-child{text-align:left}.paper-table tr:last-child td{border-bottom:0}.paper-table th:last-child,.paper-table td:last-child{border-right:0}.paper-table tbody tr:nth-child(even){background:#fbf5e8}.paper-table .group{font-weight:700;color:#7a4c20;background:#f3ead8}.paper-table .muted{color:#9b907d}.paper-table .best{font-weight:700}.paper-table sup{line-height:0}.nowrap{white-space:nowrap}.source-figure-box{padding:40px 18px;background:#eee5d2;border:1px solid #d2c6ae;font:16px Arial,sans-serif}.source-figure-box a{font-weight:700}.source-note{margin:0 0 24px;padding:12px 14px;border-left:3px solid #9b814f;background:#efe5cf;color:#594c38;font:13px/1.55 Arial,sans-serif}.annotation-launch{position:fixed;right:20px;bottom:20px;z-index:40;border:1px solid #315b32;background:#315b32;color:white;padding:10px 13px;cursor:pointer;font-weight:700}.selection-note{position:fixed;z-index:50;display:none;width:min(360px,calc(100vw - 24px));padding:12px;background:#fffdf6;border:1px solid #8b806a;box-shadow:0 10px 30px rgba(0,0,0,.26);font-family:Arial,sans-serif}.selection-note textarea{width:100%;min-height:90px;margin:8px 0;padding:8px}.selection-note .quote{max-height:80px;overflow:auto;font-size:12px;color:#666}.selection-note button{margin-right:7px}.notes-drawer{position:fixed;z-index:45;top:0;right:0;width:min(390px,92vw);height:100vh;overflow:auto;padding:20px;background:#f8f2e5;border-left:2px solid #80987a;box-shadow:-8px 0 30px rgba(0,0,0,.25);transform:translateX(102%);transition:transform .18s ease;font-family:Arial,sans-serif}.notes-drawer.open{transform:translateX(0)}.notes-drawer h2{font-family:Georgia,serif;margin-top:0}.note-item{padding:12px 0;border-top:1px solid #ccc1ab}.note-quote{font:13px/1.4 Georgia,serif;color:#615849}.note-text{font-size:14px}.note-item button{border:0;background:transparent;color:#8b1e1e;cursor:pointer;padding:0}.close-notes{float:right}.toc{columns:2;column-gap:32px;margin:18px 0 28px;padding:14px 18px;background:#efe8d6;border:1px solid #d3c8ae;font:14px/1.7 Arial,sans-serif}.toc a{display:block;text-decoration:none}.toc a:hover{text-decoration:underline}@media(max-width:720px){.paper{width:min(100% - 12px,940px);padding:30px 20px 55px;border-width:3px}h1{font-size:35px}.toc{columns:1}.figure-pair>div{display:block}.figure-pair img{max-width:100%;margin-bottom:8px}.equation code{font-size:15px}}
 </style></head><body>
 <nav class="topbar"><a href="/computer-science">Computer Science Internet Archive</a><span>›</span><a href="/computer-science/library">Library</a><span>›</span><strong>Attention Is All You Need</strong><span style="margin-left:auto"><a href="https://arxiv.org/pdf/1706.03762v1" target="_blank" rel="noopener">Original PDF ↗</a></span></nav>
 <article class="paper"><header><h1>Attention Is All You Need</h1><p class="authors">Ashish Vaswani · Noam Shazeer · Niki Parmar · Jakob Uszkoreit · Llion Jones · Aidan N. Gomez · Łukasz Kaiser · Illia Polosukhin</p><p class="meta">arXiv:1706.03762v1 [cs.CL] · 12 June 2017</p></header><p class="source-note">HTML transcription prepared from the user-supplied 2017 PDF. Figures and tables are reproduced as source images where that preserves the original more faithfully. Select text anywhere in this page to attach a local annotation.</p><nav class="toc"><a href="#abstract">Abstract</a><a href="#s-1">1 Introduction</a><a href="#s-2">2 Background</a><a href="#s-3">3 Model Architecture</a><a href="#s-3-2">3.2 Attention</a><a href="#s-4">4 Why Self-Attention</a><a href="#s-5">5 Training</a><a href="#s-6">6 Results</a><a href="#s-7">7 Conclusion</a><a href="#references">References</a><a href="#appendix-figures">Attention Visualizations</a></nav><section id="abstract"><h2>Abstract</h2>
@@ -62,27 +62,7 @@ a{color:var(--blue)}.topbar{position:sticky;top:0;z-index:20;display:flex;flex-w
 <p>where pos is the position and i is the dimension. That is, each dimension of the positional encoding corresponds to a sinusoid. The wavelengths form a geometric progression from 2π to 10000 · 2π. We chose this function because we hypothesized it would allow the model to easily learn to attend by relative positions, since for any fixed offset k, PEpos+k can be represented as a linear function of PEpos.</p>
 <h2 id="s-4"><span>4</span> Why Self-Attention</h2>
 <p>In this section we compare various aspects of self-attention layers to the recurrent and convolutional layers commonly used for mapping one variable-length sequence of symbol representations</p>
-<figure class="table-figure"><figcaption>Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. n is the sequence length, d is the representation dimension, k is the kernel size of convolutions and r the size of the neighborhood in restricted self-attention.</figcaption><pre class="source-table">Layer Type
-Complexity per Layer
-Sequential
-Maximum Path Length
-Operations
-Self-Attention
-O(n2 · d)
-O(1)
-O(1)
-Recurrent
-O(n · d2)
-O(n)
-O(n)
-Convolutional
-O(k · n · d2)
-O(1)
-O(logk(n))
-Self-Attention (restricted)
-O(r · n · d)
-O(1)
-O(n/r)</pre></figure>
+<figure class="table-figure"><figcaption>Table 1: Maximum path lengths, per-layer complexity and minimum number of sequential operations for different layer types. n is the sequence length, d is the representation dimension, k is the kernel size of convolutions and r the size of the neighborhood in restricted self-attention.</figcaption><div class="paper-table-wrap"><table class="paper-table"><thead><tr><th>Layer Type</th><th>Complexity per Layer</th><th>Sequential Operations</th><th>Maximum Path Length</th></tr></thead><tbody><tr><td>Self-Attention</td><td>O(n² · d)</td><td>O(1)</td><td>O(1)</td></tr><tr><td>Recurrent</td><td>O(n · d²)</td><td>O(n)</td><td>O(n)</td></tr><tr><td>Convolutional</td><td>O(k · n · d²)</td><td>O(1)</td><td>O(log<sub>k</sub>(n))</td></tr><tr><td>Self-Attention (restricted)</td><td>O(r · n · d)</td><td>O(1)</td><td>O(n/r)</td></tr></tbody></table></div></figure>
 <p>(x1, ..., xn) to another sequence of equal length (z1, ..., zn), with xi, zi ∈Rd, such as a hidden layer in a typical sequence transduction encoder or decoder. Motivating our use of self-attention we consider three desiderata.</p>
 <p>One is the total computational complexity per layer. Another is the amount of computation that can be parallelized, as measured by the minimum number of sequential operations required.</p>
 <p>The third is the path length between long-range dependencies in the network. Learning long-range dependencies is a key challenge in many sequence transduction tasks. One key factor affecting the ability to learn such dependencies is the length of the paths forward and backward signals have to traverse in the network. The shorter these paths between any combination of positions in the input and output sequences, the easier it is to learn long-range dependencies [11]. Hence we also compare the maximum path length between any two input and output positions in networks composed of the different layer types.</p>
@@ -112,54 +92,7 @@ O(n/r)</pre></figure>
 <h2 id="s-6"><span>6</span> Results</h2>
 <h3 id="s-6-1"><span>6.1</span> Machine Translation</h3>
 <p>On the WMT 2014 English-to-German translation task, Our big transformer model (Transformer (big) in Table 2) outperforms the best previously reported models (including ensembles) by more than 2.0 BLEU, establishing a new state-of-the-art BLEU score of 28.4. The configuration of this model is listed in the bottom line of Table 3. Training took 3.5 days on 8 P100 GPUs. Even our base model surpasses all previously published models and ensembles, at a fraction of the training cost of any of the previous best models.</p>
-<figure class="table-figure"><figcaption>Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.</figcaption><pre class="source-table">Model
-BLEU
-Training Cost (FLOPs)
-EN-DE
-EN-FR
-EN-DE
-EN-FR
-ByteNet [16]
-23.75
-Deep-Att + PosUnk [35]
-39.2
-1.0 · 1020
-GNMT + RL [34]
-24.6
-39.92
-2.3 · 1019
-1.4 · 1020
-ConvS2S [9]
-25.16
-40.46
-9.6 · 1018
-1.5 · 1020
-MoE [29]
-26.03
-40.56
-2.0 · 1019
-1.2 · 1020
-Deep-Att + PosUnk Ensemble [35]
-40.4
-8.0 · 1020
-GNMT + RL Ensemble [34]
-26.30
-41.16
-1.8 · 1020
-1.1 · 1021
-ConvS2S Ensemble [9]
-26.36
-41.29
-7.7 · 1019
-1.2 · 1021
-Transformer (base model)
-27.3
-38.1
-3.3 · 1018
-Transformer (big)
-28.4
-41.0
-2.3 · 1019</pre></figure>
+<figure class="table-figure"><figcaption>Table 2: The Transformer achieves better BLEU scores than previous state-of-the-art models on the English-to-German and English-to-French newstest2014 tests at a fraction of the training cost.</figcaption><div class="paper-table-wrap"><table class="paper-table"><thead><tr><th rowspan="2">Model</th><th colspan="2">BLEU</th><th colspan="2">Training Cost (FLOPs)</th></tr><tr><th>EN-DE</th><th>EN-FR</th><th>EN-DE</th><th>EN-FR</th></tr></thead><tbody><tr><td>ByteNet [16]</td><td>23.75</td><td class="muted">—</td><td class="muted">—</td><td class="muted">—</td></tr><tr><td>Deep-Att + PosUnk [35]</td><td class="muted">—</td><td>39.2</td><td class="muted">—</td><td><span class="nowrap">1.0 · 10<sup>20</sup></span></td></tr><tr><td>GNMT + RL [34]</td><td>24.6</td><td>39.92</td><td><span class="nowrap">2.3 · 10<sup>19</sup></span></td><td><span class="nowrap">1.4 · 10<sup>20</sup></span></td></tr><tr><td>ConvS2S [9]</td><td>25.16</td><td>40.46</td><td><span class="nowrap">9.6 · 10<sup>18</sup></span></td><td><span class="nowrap">1.5 · 10<sup>20</sup></span></td></tr><tr><td>MoE [29]</td><td>26.03</td><td>40.56</td><td><span class="nowrap">2.0 · 10<sup>19</sup></span></td><td><span class="nowrap">1.2 · 10<sup>20</sup></span></td></tr><tr><td>Deep-Att + PosUnk Ensemble [35]</td><td class="muted">—</td><td>40.4</td><td class="muted">—</td><td><span class="nowrap">8.0 · 10<sup>20</sup></span></td></tr><tr><td>GNMT + RL Ensemble [34]</td><td>26.30</td><td>41.16</td><td><span class="nowrap">1.8 · 10<sup>20</sup></span></td><td><span class="nowrap">1.1 · 10<sup>21</sup></span></td></tr><tr><td>ConvS2S Ensemble [9]</td><td>26.36</td><td>41.29</td><td><span class="nowrap">7.7 · 10<sup>19</sup></span></td><td><span class="nowrap">1.2 · 10<sup>21</sup></span></td></tr><tr><td>Transformer (base model)</td><td>27.3</td><td>38.1</td><td colspan="2"><span class="nowrap">3.3 · 10<sup>18</sup></span></td></tr><tr><td class="best">Transformer (big)</td><td class="best">28.4</td><td class="best">41.0</td><td colspan="2" class="best"><span class="nowrap">2.3 · 10<sup>19</sup></span></td></tr></tbody></table></div></figure>
 <p>On the WMT 2014 English-to-French translation task, our big model achieves a BLEU score of 41.0, outperforming all of the previously published single models, at less than 1/4 the training cost of the previous state-of-the-art model. The Transformer (big) model trained for English-to-French used dropout rate Pdrop = 0.1, instead of 0.3.</p>
 <p>For the base models, we used a single model obtained by averaging the last 5 checkpoints, which were written at 10-minute intervals. For the big models, we averaged the last 20 checkpoints. We used beam search with a beam size of 4 and length penalty α = 0.6 [34]. These hyperparameters were chosen after experimentation on the development set. We set the maximum output length during inference to input length + 50, but terminate early when possible [34].</p>
 <p>Table 2 summarizes our results and compares our translation quality and training costs to other model architectures from the literature. We estimate the number of floating point operations used to train a model by multiplying the training time, the number of GPUs used, and an estimate of the sustained single-precision floating-point capacity of each GPU 3.</p>
@@ -171,165 +104,8 @@ Transformer (big)
 <p>To evaluate if the Transformer can generalize to other tasks we performed experiments on English constituency parsing. This task presents specific challenges: the output is subject to strong structural constraints and is significantly longer than the input. Furthermore, RNN sequence-to-sequence models have not been able to attain state-of-the-art results in small-data regimes [33].</p>
 <p>We trained a 4-layer transformer with dmodel = 1024 on the Wall Street Journal (WSJ) portion of the Penn Treebank [23], about 40K training sentences. We also trained it in a semi-supervised setting, using the larger high-confidence and BerkleyParser corpora from with approximately 17M sentences</p>
 <p>3We used values of 2.8, 3.7, 6.0 and 9.5 TFLOPS for K80, K40, M40 and P100, respectively.</p>
-<figure class="table-figure"><figcaption>Table 3: Variations on the Transformer architecture. Unlisted hyperparameter values are identical to those of the base model. All metrics are on the English-to-German translation development set, newstest2013. Listed perplexities are per-wordpiece, according to our byte-pair encoding, and should not be compared to per-word perplexities.</figcaption><pre class="source-table">N
-dmodel
-dff
-h
-dk
-dv
-Pdrop
-ϵls
-train
-PPL
-BLEU
-params
-steps
-(dev)
-(dev)
-×106
-base
-6
-512
-1024
-8
-64
-64
-0.1
-0.1
-100K
-4.92
-25.8
-65
-(A)
-1
-512
-512
-5.29
-24.9
-65
-4
-128
-128
-5.00
-25.5
-65
-16
-32
-32
-4.91
-25.8
-65
-32
-16
-16
-5.01
-25.4
-65
-(B)
-16
-5.16
-25.1
-58
-32
-5.01
-25.4
-60
-(C)
-2
-6.11
-23.7
-36
-4
-5.19
-25.3
-50
-8
-4.88
-25.5
-80
-256
-32
-32
-5.75
-24.5
-28
-1024
-128
-128
-4.66
-26.0
-168
-1024
-5.12
-25.4
-53
-4096
-4.75
-26.2
-90
-(D)
-0.0
-5.77
-24.6
-65
-0.2
-4.95
-25.5
-65
-0.0
-4.67
-25.3
-65
-0.2
-5.47
-25.7
-65
-big
-6
-1024
-4096
-16
-0.3
-300K
-4.33
-26.4
-213</pre></figure>
-<figure class="table-figure"><figcaption>Table 4: The Transformer generalizes well to English constituency parsing (Results are on Section 23 of WSJ)</figcaption><pre class="source-table">Parser
-Training
-WSJ 23 F1
-Vinyals &amp; Kaiser el al. (2014) [33]
-WSJ only, discriminative
-88.3
-Petrov et al. (2006) [27]
-WSJ only, discriminative
-90.4
-Zhu et al. (2013) [36]
-WSJ only, discriminative
-90.4
-Dyer et al. (2016) [8]
-WSJ only, discriminative
-91.7
-Transformer (4 layers)
-WSJ only, discriminative
-91.3
-Zhu et al. (2013) [36]
-semi-supervised
-91.3
-Huang &amp; Harper (2009) [13]
-semi-supervised
-91.3
-McClosky et al. (2006) [24]
-semi-supervised
-92.1
-Vinyals &amp; Kaiser el al. (2014) [33]
-semi-supervised
-92.1
-Transformer (4 layers)
-semi-supervised
-92.7
-Dyer et al. (2016) [8]
-generative
-93.3</pre></figure>
+<figure class="table-figure"><figcaption>Table 3: Variations on the Transformer architecture. Unlisted hyperparameter values are identical to those of the base model. All metrics are on the English-to-German translation development set, newstest2013. Listed perplexities are per-wordpiece, according to our byte-pair encoding, and should not be compared to per-word perplexities.</figcaption><div class="paper-table-wrap"><table class="paper-table wide"><thead><tr><th>Setting</th><th>N</th><th>d<sub>model</sub></th><th>d<sub>ff</sub></th><th>h</th><th>d<sub>k</sub></th><th>d<sub>v</sub></th><th>P<sub>drop</sub></th><th>ε<sub>ls</sub></th><th>train steps</th><th>PPL (dev)</th><th>BLEU (dev)</th><th>params ×10⁶</th></tr></thead><tbody><tr><td class="group">base</td><td>6</td><td>512</td><td>1024</td><td>8</td><td>64</td><td>64</td><td>0.1</td><td>0.1</td><td>100K</td><td>4.92</td><td>25.8</td><td>65</td></tr><tr><td class="group" rowspan="4">(A)</td><td></td><td></td><td></td><td>1</td><td>512</td><td>512</td><td></td><td></td><td></td><td>5.29</td><td>24.9</td><td>65</td></tr><tr><td></td><td></td><td></td><td>4</td><td>128</td><td>128</td><td></td><td></td><td></td><td>5.00</td><td>25.5</td><td>65</td></tr><tr><td></td><td></td><td></td><td>16</td><td>32</td><td>32</td><td></td><td></td><td></td><td>4.91</td><td>25.8</td><td>65</td></tr><tr><td></td><td></td><td></td><td>32</td><td>16</td><td>16</td><td></td><td></td><td></td><td>5.01</td><td>25.4</td><td>65</td></tr><tr><td class="group" rowspan="2">(B)</td><td></td><td></td><td></td><td></td><td>16</td><td></td><td></td><td></td><td></td><td>5.16</td><td>25.1</td><td>58</td></tr><tr><td></td><td></td><td></td><td></td><td>32</td><td></td><td></td><td></td><td></td><td>5.01</td><td>25.4</td><td>60</td></tr><tr><td class="group" rowspan="7">(C)</td><td>2</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>6.11</td><td>23.7</td><td>36</td></tr><tr><td>4</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>5.19</td><td>25.3</td><td>50</td></tr><tr><td>8</td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>4.88</td><td>25.5</td><td>80</td></tr><tr><td></td><td>256</td><td></td><td></td><td>32</td><td>32</td><td></td><td></td><td></td><td>5.75</td><td>24.5</td><td>28</td></tr><tr><td></td><td>1024</td><td></td><td></td><td>128</td><td>128</td><td></td><td></td><td></td><td>4.66</td><td>26.0</td><td>168</td></tr><tr><td></td><td></td><td>1024</td><td></td><td></td><td></td><td></td><td></td><td></td><td>5.12</td><td>25.4</td><td>53</td></tr><tr><td></td><td></td><td>4096</td><td></td><td></td><td></td><td></td><td></td><td></td><td>4.75</td><td>26.2</td><td>90</td></tr><tr><td class="group" rowspan="4">(D)</td><td></td><td></td><td></td><td></td><td></td><td>0.0</td><td></td><td></td><td>5.77</td><td>24.6</td><td>65</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td>0.2</td><td></td><td></td><td>4.95</td><td>25.5</td><td>65</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.0</td><td></td><td>4.67</td><td>25.3</td><td>65</td></tr><tr><td></td><td></td><td></td><td></td><td></td><td></td><td></td><td>0.2</td><td></td><td>5.47</td><td>25.7</td><td>65</td></tr><tr><td class="group">big</td><td>6</td><td>1024</td><td>4096</td><td>16</td><td></td><td></td><td>0.3</td><td></td><td>300K</td><td>4.33</td><td>26.4</td><td>213</td></tr></tbody></table></div></figure>
+<figure class="table-figure"><figcaption>Table 4: The Transformer generalizes well to English constituency parsing (Results are on Section 23 of WSJ)</figcaption><div class="paper-table-wrap"><table class="paper-table"><thead><tr><th>Parser</th><th>Training</th><th>WSJ 23 F1</th></tr></thead><tbody><tr><td>Vinyals &amp; Kaiser et al. (2014) [33]</td><td>WSJ only, discriminative</td><td>88.3</td></tr><tr><td>Petrov et al. (2006) [27]</td><td>WSJ only, discriminative</td><td>90.4</td></tr><tr><td>Zhu et al. (2013) [36]</td><td>WSJ only, discriminative</td><td>90.4</td></tr><tr><td>Dyer et al. (2016) [8]</td><td>WSJ only, discriminative</td><td>91.7</td></tr><tr><td>Transformer (4 layers)</td><td>WSJ only, discriminative</td><td>91.3</td></tr><tr><td>Zhu et al. (2013) [36]</td><td>semi-supervised</td><td>91.3</td></tr><tr><td>Huang &amp; Harper (2009) [13]</td><td>semi-supervised</td><td>91.3</td></tr><tr><td>McClosky et al. (2006) [24]</td><td>semi-supervised</td><td>92.1</td></tr><tr><td>Vinyals &amp; Kaiser et al. (2014) [33]</td><td>semi-supervised</td><td>92.1</td></tr><tr><td>Transformer (4 layers)</td><td>semi-supervised</td><td>92.7</td></tr><tr><td>Dyer et al. (2016) [8]</td><td>generative</td><td class="best">93.3</td></tr></tbody></table></div></figure>
 <p>[33]. We used a vocabulary of 16K tokens for the WSJ only setting and a vocabulary of 32K tokens for the semi-supervised setting.</p>
 <p>We performed only a small number of experiments to select the dropout, both attention and residual (section 5.4), learning rates and beam size on the Section 22 development set, all other parameters remained unchanged from the English-to-German base translation model. During inference, we increased the maximum output length to input length + 300. We used a beam size of 21 and α = 0.3 for both WSJ only and the semi-supervised setting.</p>
 <p>Our results in Table 4 show that despite the lack of task-specific tuning our model performs surprisingly well, yielding better results than all previously reported models with the exception of the Recurrent Neural Network Grammar [8].</p>
