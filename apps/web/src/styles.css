@@ -3138,3 +3138,54 @@ a.cs-archive-entry:focus-visible {
   font-size: 15px;
   line-height: 1.65;
 }
+
+
+/* Reading room refresh: user-supplied gala photograph and MIA-inspired paper */
+.archive-home-shell {
+  background:
+    linear-gradient(rgba(251, 250, 247, .80), rgba(251, 250, 247, .92)),
+    url('/gala-background.webp') center 18% / cover fixed no-repeat;
+}
+.archive-home-shell .archive-orbit {
+  border: 1px solid rgba(200, 184, 154, .60);
+  border-radius: 4px;
+  background: rgba(255, 253, 247, .84);
+  box-shadow: 0 8px 28px rgba(40, 36, 28, .10);
+}
+.cs-library-photo-background {
+  background:
+    linear-gradient(rgba(27, 34, 28, .62), rgba(27, 34, 28, .72)),
+    url('/gala-background.webp') center top / cover fixed no-repeat;
+  background-color: #343c33;
+}
+.cs-library-photo-background .cs-section-page {
+  background: #f8f2e5;
+  box-shadow: 0 12px 42px rgba(15, 18, 14, .24);
+}
+.cs-library-entry h3 { text-decoration: none; }
+.cs-library-entry a,
+.cs-library-entry .cs-library-open-paper {
+  color: #0b2c8a;
+  font: inherit;
+  text-decoration: underline;
+}
+.cs-library-open-paper {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+.cs-library-open-paper:hover,
+.cs-library-entry a:hover { color: #653e12; }
+.cs-library-detail { margin-top: 8px !important; color: #6d6455 !important; font-size: 14px; }
+.cs-paper-reading { max-width: 770px; padding: 32px 18px 44px; color: #302c26; line-height: 1.85; }
+.cs-paper-reading h2 { font-family: Georgia, 'Times New Roman', serif; font-size: 27px; font-weight: 500; border-bottom: 1px solid #ded1b8; padding-bottom: 10px; }
+.cs-paper-reading h3 { margin: 25px 0 9px; font-family: Georgia, 'Times New Roman', serif; font-size: 23px; font-weight: 500; color: #37332c; }
+.cs-paper-reading p { font-family: Georgia, 'Times New Roman', serif; line-height: 1.8; }
+.cs-paper-reading .cs-paper-note { margin-top: 40px; padding: 16px; border-left: 3px solid #b79c63; background: #f2e8d6; font: 14px/1.6 system-ui, sans-serif; color: #655849; }
+@media (max-width: 760px) {
+  .archive-home-shell { background-attachment: scroll; }
+  .cs-library-photo-background { background-attachment: scroll; padding-inline: 8px; }
+  .cs-paper-reading { padding-inline: 5px; }
+}
