@@ -2122,8 +2122,8 @@ button.archive-subject-link:focus-visible,
   overflow: hidden;
   isolation: isolate;
   background:
-    linear-gradient(rgba(5, 9, 10, 0.48), rgba(5, 9, 10, 0.66)),
-    url('/gala-background.webp') center 42% / cover no-repeat,
+    linear-gradient(rgba(5, 9, 10, 0.34), rgba(5, 9, 10, 0.56)),
+    url('/gala-background.webp') center 46% / cover no-repeat,
     #090d0f;
 }
 
@@ -2404,8 +2404,8 @@ a.cs-archive-entry:focus-visible {
     padding: 0 4px 34px;
     overflow: visible;
     background:
-      linear-gradient(rgba(5, 9, 10, 0.56), rgba(5, 9, 10, 0.72)),
-      url('/gala-background.webp') center top / cover no-repeat,
+      linear-gradient(rgba(5, 9, 10, 0.46), rgba(5, 9, 10, 0.66)),
+      url('/gala-background.webp') center 38% / cover no-repeat,
       #090d0f;
   }
 
