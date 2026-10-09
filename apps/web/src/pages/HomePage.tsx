@@ -31,7 +31,8 @@ const socialScience: SubjectItem[] = [
   { label: 'Political Thought & Ideology' }
 ]
 
-const marxPortrait = '/marx-home.webp'
+const turingPortrait =
+  'https://commons.wikimedia.org/wiki/Special:FilePath/Alan_Turing_(1912-1954)_in_1936_at_Princeton_University_(b%26w).jpg'
 
 function SubjectEntry({
   item,
@@ -86,26 +87,10 @@ export function HomePage({ onNavigate }: PageProps) {
           <div className="archive-mark" aria-label="Temporary Standard Science mark">
             <div className="archive-mark-ring">
               <img
-                src={marxPortrait}
-                alt="Karl Marx"
+                src={turingPortrait}
+                alt="Alan Turing at Princeton University in 1936"
                 className="archive-mark-image"
               />
-              <svg className="archive-mark-seal" viewBox="0 0 400 400" aria-hidden="true">
-                <defs>
-                  <path id="archive-mark-top-arc" d="M 42 200 A 158 158 0 0 1 358 200" />
-                  <path id="archive-mark-bottom-arc" d="M 358 200 A 158 158 0 0 1 42 200" />
-                </defs>
-                <text className="archive-mark-seal-text">
-                  <textPath href="#archive-mark-top-arc" startOffset="50%" textAnchor="middle">
-                    STANDARD SCIENCE
-                  </textPath>
-                </text>
-                <text className="archive-mark-seal-text">
-                  <textPath href="#archive-mark-bottom-arc" startOffset="50%" textAnchor="middle">
-                    INTERNET ARCHIVE
-                  </textPath>
-                </text>
-              </svg>
             </div>
             <div className="archive-mark-copy">
               <h1 id="standard-science-title">Standard Science</h1>
@@ -113,7 +98,7 @@ export function HomePage({ onNavigate }: PageProps) {
             </div>
           </div>
           <p className="archive-mark-note">
-            Standard Science Internet Archive
+            Alan Turing is a temporary placeholder for the future Standard Science logo.
           </p>
         </div>
 
