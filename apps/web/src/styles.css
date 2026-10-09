@@ -2303,17 +2303,17 @@ button.archive-subject-link:focus-visible,
 }
 
 .cs-archive-primary {
-  left: 29%;
-  top: 128px;
-  width: 35%;
+  left: 24%;
+  top: 132px;
+  width: 34%;
   gap: 13px;
 }
 
 .cs-archive-tools {
-  left: 56%;
-  top: 270px;
-  width: 21%;
-  gap: 12px;
+  left: 61%;
+  top: 258px;
+  width: 22%;
+  gap: 11px;
 }
 
 .cs-archive-entry {
@@ -2341,13 +2341,13 @@ a.cs-archive-entry {
 
 .cs-archive-entry.green {
   color: #68a860;
-  font-size: clamp(19px, 1.78vw, 26px);
+  font-size: clamp(22px, 2.05vw, 29px);
   font-weight: 500;
 }
 
 .cs-archive-entry.orange {
   color: #e68b25;
-  font-size: clamp(22px, 2vw, 29px);
+  font-size: clamp(24px, 2.15vw, 31px);
   font-weight: 600;
   text-transform: uppercase;
 }
