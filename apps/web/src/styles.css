@@ -1920,23 +1920,44 @@ button.archive-subject-link:focus-visible,
 }
 
 .archive-mark-ring {
+  position: relative;
   display: grid;
   place-items: center;
-  width: clamp(300px, 31vw, 390px);
+  width: clamp(320px, 32vw, 400px);
   aspect-ratio: 1;
-  padding: 10px;
-  border: 14px solid #111111;
+  padding: clamp(40px, 4.7vw, 56px);
   border-radius: 50%;
-  background: #ffffff;
+  background: #050505;
+  box-sizing: border-box;
 }
 
 .archive-mark-image {
+  position: relative;
+  z-index: 1;
   width: 100%;
   height: 100%;
   object-fit: cover;
   object-position: center;
   border-radius: 50%;
-  filter: none;
+  filter: grayscale(1) contrast(1.04);
+}
+
+.archive-mark-seal {
+  position: absolute;
+  z-index: 2;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: visible;
+  pointer-events: none;
+}
+
+.archive-mark-seal-text {
+  fill: #ffffff;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 31px;
+  font-weight: 700;
+  letter-spacing: 0.075em;
 }
 
 .archive-mark-copy {
@@ -2087,7 +2108,12 @@ button.archive-subject-link:focus-visible,
   }
 
   .archive-mark-ring {
-    width: min(250px, 62vw);
+    width: min(280px, 70vw);
+    padding: 40px;
+  }
+
+  .archive-mark-seal-text {
+    font-size: 30px;
   }
 
   .archive-mark-note {
