@@ -97,9 +97,6 @@ export function HomePage({ onNavigate }: PageProps) {
               <p>Open Knowledge Archive</p>
             </div>
           </div>
-          <p className="archive-mark-note">
-            Alan Turing is a temporary placeholder for the future Standard Science logo.
-          </p>
         </div>
 
         <section className="archive-domain archive-domain-social" aria-labelledby="social-science-title">

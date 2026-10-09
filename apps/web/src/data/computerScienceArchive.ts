@@ -44,6 +44,11 @@ export const computerScienceSubjects: ComputerScienceSubject[] = [
       'Automata, formal languages, computability, complexity, and the limits of what machines can compute.'
   },
   {
+    title: 'Quantum Computing',
+    description:
+      'Quantum information, quantum algorithms, circuit models, complexity, fault tolerance, quantum error correction, and the relationship between quantum and classical computation.'
+  },
+  {
     title: 'Algorithms & Data Structures',
     description:
       'Algorithm design, complexity, data structures, graph methods, optimization, approximation, and modern algorithmic systems.',
@@ -182,6 +187,12 @@ export const libraryCollections: LibraryCollection[] = [
     description:
       'Papers, technical reports, datasets, benchmarks, model documentation, and historical material across the development of AI.',
     examples: ['McCarthy', 'expert systems', 'machine learning', 'deep learning', 'language models']
+  },
+  {
+    title: 'Quantum Computing',
+    description:
+      'Books, surveys, papers, and technical material on quantum algorithms, quantum information, fault tolerance, error correction, and quantum-computational complexity.',
+    examples: ['Shor', 'Grover', 'quantum simulation', 'QPE', 'fault-tolerant quantum computing']
   },
   {
     title: 'Open Source & Modern Computing',
