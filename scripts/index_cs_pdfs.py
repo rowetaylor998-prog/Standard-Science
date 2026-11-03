@@ -24,10 +24,9 @@ DEFAULT_OUTPUT = Path.home() / "Documents/Standard-Science-private/cs-pdf-index.
 
 def normalize(value: str) -> str:
     value = unicodedata.normalize("NFKC", value).lower()
-    value = re.sub(r"\\([^)]*(?:z-library|1lib|z-lib|pdfdrive|archive)[^)]*\\)", "", value)
-    value = re.sub(r"[^\\w]+", " ", value, flags=re.UNICODE)
+    value = re.sub(r"\([^)]*(?:z-library|1lib|z-lib|pdfdrive|archive)[^)]*\)", "", value)
+    value = re.sub(r"[^\w]+", " ", value, flags=re.UNICODE)
     return " ".join(value.split())
-
 
 def title_match(stem: str, books: list[dict]) -> tuple[dict | None, float]:
     name = normalize(stem)
