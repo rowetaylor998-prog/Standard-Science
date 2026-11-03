@@ -9,7 +9,7 @@ type ArchiveLink = {
   route?: RoutePath
   href?: string
   status?: 'future'
-  tone?: 'gold' | 'green' | 'orange'
+  tone?: 'gold' | 'green' | 'orange' | 'red'
 }
 
 type Scientist = {
@@ -86,7 +86,8 @@ const mainArchiveLinks: ArchiveLink[] = [
 const archiveTools: ArchiveLink[] = [
   { label: 'FAQ', route: '/computer-science/faq', tone: 'green' },
   { label: 'Lessons', route: '/lessons', tone: 'green' },
-  { label: 'Resources', route: '/computer-science/resources', tone: 'green' },
+  { label: 'About the Archive', status: 'future', tone: 'green' },
+  { label: 'Resources', route: '/computer-science/resources', tone: 'red' },
   { label: 'Search', route: '/computer-science/search', tone: 'orange' }
 ]
 
