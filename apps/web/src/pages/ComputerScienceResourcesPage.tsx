@@ -118,6 +118,7 @@ export function ComputerScienceResourcesPage({ onNavigate }: Props) {
                   <p>{book.authors}</p>
                   <div className="cs-hub-book-meta"><span>{book.domain}</span><span>Priority: {book.priority}</span></div>
                   {book.note ? <p className="cs-hub-book-note">{book.note}</p> : null}
+                  <p className="cs-hub-lookup"><a href={`https://search.worldcat.org/search?q=${encodeURIComponent(book.title + ' ' + book.authors.split(';')[0])}`} target="_blank" rel="noopener noreferrer">Find library / publisher edition ↗</a></p>
                 </article>
               ))
             }
