@@ -5,6 +5,7 @@ import { LessonsPage } from './pages/LessonsPage'
 import { ComputerScienceArchivePage } from './pages/ComputerScienceArchivePage'
 import { ComputerScienceSubjectsPage } from './pages/ComputerScienceSubjectsPage'
 import { ComputerScienceLibraryPage } from './pages/ComputerScienceLibraryPage'
+import { ComputerScienceResourcesPage } from './pages/ComputerScienceResourcesPage'
 import { ComputerSciencePaperPage } from './pages/ComputerSciencePaperPage'
 import { QuantumAlgorithmsBookPage } from './pages/QuantumAlgorithmsBookPage'
 import { ComputerScientistsPage } from './pages/ComputerScientistsPage'
@@ -26,6 +27,7 @@ const routes = {
     />
   ),
   '/computer-science/library': ComputerScienceLibraryPage,
+  '/computer-science/resources': ComputerScienceResourcesPage,
   '/computer-science/library/attention-is-all-you-need': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerSciencePaperPage {...props} paperId="transformer" />,
   '/computer-science/library/imagenet-classification': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerSciencePaperPage {...props} paperId="imagenet" />,
   '/computer-science/library/quantum-algorithms': QuantumAlgorithmsBookPage,
