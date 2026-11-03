@@ -2352,6 +2352,17 @@ a.cs-archive-entry {
   text-transform: uppercase;
 }
 
+/* Dedicated elegant red treatment for the independent Resources link. */
+.cs-archive-entry.red {
+  color: #f16b6e;
+  font-family: "Apple Chancery", "URW Chancery L", "Palatino Linotype", "Book Antiqua", Georgia, serif;
+  font-size: clamp(24px, 2.35vw, 33px);
+  font-style: italic;
+  font-weight: 600;
+  letter-spacing: 0.025em;
+  text-shadow: 0 1px 8px rgba(0, 0, 0, 0.9);
+}
+
 button.cs-archive-entry:hover,
 button.cs-archive-entry:focus-visible,
 a.cs-archive-entry:hover,
@@ -2511,6 +2522,10 @@ a.cs-archive-entry:focus-visible {
 
   .cs-archive-entry.orange {
     font-size: 23px;
+  }
+
+  .cs-archive-entry.red {
+    font-size: 25px;
   }
 
   .cs-scientist {
