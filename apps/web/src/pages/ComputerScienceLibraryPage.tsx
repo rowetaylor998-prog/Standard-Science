@@ -59,6 +59,7 @@ export function ComputerScienceLibraryPage({ onNavigate }: Props) {
         title="Library"
         onNavigate={onNavigate}
         description="Books, papers, technical documents, and historical works.">
+        <p className="cs-library-source-links"><button className="cs-library-open-paper" type="button" onClick={() => onNavigate('/computer-science/resources')}>Browse ACM, IEEE, research magazines, publishers and communities →</button></p>
         <section className="cs-index-section">
           <h2>Collections</h2>
           <div className="cs-library-collections">
