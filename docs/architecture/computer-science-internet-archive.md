@@ -1,38 +1,30 @@
 # Computer Science Internet Archive — current architecture
 
-The Computer Science Internet Archive is the first developed subject archive inside Standard Science.
-
 ## Main entrances
 
-- Subjects
-- Library
+- Library — Subjects, Topics, Resources
+- Guide — navigation, topic lookup, learning and archive guidance
 - Computer Scientists
 - History
 - Practice & Projects
 
-## Archive tools
-
-- FAQ
-- Lessons
-- About the Archive
-- Search
-
-There is no Open Meeting subsystem and no embedded AI tutor.
+Archive tools remain FAQ, Lessons, About the Archive, Research Resources (external research directory), and Search.
 
 ## Library model
 
-Library can index books, papers, standards, manuals, source code, technical reports, datasets, benchmarks, and historical documents.
+The 17 core subjects remain the primary disciplinary map. Topics have stable IDs and can be linked to multiple subjects. Resources (books, papers, standards, source code and technical documents) have one canonical bibliographic record per work/edition. Subject and topic indexes derive their entries from relationships, not duplicate copies. A resource may be associated directly with a subject and/or indirectly through topics.
 
-Long works should normally begin as bibliographic entries linking to stable lawful sources. Selected shorter papers can receive HTML reading pages when useful. Manual annotations may be attached to supported HTML/Markdown pages.
+The current implementation uses the existing TypeScript catalog, not a new database or API. `computerScienceCatalog.ts` defines topic relationships and derives indexes; existing reading routes and resource records are preserved. Topic coverage is an initial scaffold; empty collections are labeled. A later database migration can normalize these links into subject-topic, topic-resource and subject-resource relations.
+
+Long works should normally begin as bibliographic entries linking to stable lawful sources. Selected shorter papers may receive HTML reading pages; existing local annotations are preserved.
 
 ## Active routes
 
-- `/computer-science`
-- `/computer-science/subjects`
 - `/computer-science/library`
-- `/computer-science/scientists`
-- `/computer-science/history`
-- `/computer-science/practice-projects`
-- `/computer-science/faq`
-- `/computer-science/search`
-- `/lessons`
+- `/computer-science/library/subjects` and `/computer-science/library/subjects/:id`
+- `/computer-science/library/topics` and `/computer-science/library/topics/:id`
+- `/computer-science/library/resources`
+- `/computer-science/guide`
+- `/computer-science/resources` — external research directory, distinct from Library resources
+- Legacy `/computer-science/subjects` and `/computer-science/subjects/algorithms` remain available.
+- Existing paper/book routes, scientists, history, practice, FAQ, search, and lessons remain available.

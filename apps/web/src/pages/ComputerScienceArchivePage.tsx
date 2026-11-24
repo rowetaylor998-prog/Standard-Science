@@ -76,8 +76,8 @@ const scientists: Scientist[] = [
 ]
 
 const mainArchiveLinks: ArchiveLink[] = [
-  { label: 'Subjects', route: '/computer-science/subjects', tone: 'gold' },
   { label: 'Library', route: '/computer-science/library', tone: 'gold' },
+  { label: 'Guide', route: '/computer-science/guide', tone: 'gold' },
   { label: 'Computer Scientists', route: '/computer-science/scientists', tone: 'gold' },
   { label: 'History', route: '/computer-science/history', tone: 'gold' },
   { label: 'Practice & Projects', route: '/computer-science/practice-projects', tone: 'gold' }
@@ -87,7 +87,7 @@ const archiveTools: ArchiveLink[] = [
   { label: 'FAQ', route: '/computer-science/faq', tone: 'green' },
   { label: 'Lessons', route: '/lessons', tone: 'green' },
   { label: 'About the Archive', status: 'future', tone: 'green' },
-  { label: 'Resources', route: '/computer-science/resources', tone: 'red' },
+  { label: 'Research Resources', route: '/computer-science/resources', tone: 'red' },
   { label: 'Search', route: '/computer-science/search', tone: 'orange' }
 ]
 

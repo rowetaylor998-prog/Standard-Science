@@ -3,8 +3,9 @@ import { Layout } from './components/Layout'
 import { HomePage } from './pages/HomePage'
 import { LessonsPage } from './pages/LessonsPage'
 import { ComputerScienceArchivePage } from './pages/ComputerScienceArchivePage'
-import { ComputerScienceSubjectsPage } from './pages/ComputerScienceSubjectsPage'
-import { ComputerScienceLibraryPage } from './pages/ComputerScienceLibraryPage'
+import { ComputerScienceGuidePage } from './pages/ComputerScienceGuidePage'
+import { ComputerScienceLibraryPage, ComputerScienceLibraryDetailPage } from './pages/ComputerScienceLibraryPage'
+import { isLibraryDetailPath, type LibraryDetailRoute } from './data/computerScienceCatalog'
 import { ComputerScienceResourcesPage } from './pages/ComputerScienceResourcesPage'
 import { ComputerSciencePaperPage } from './pages/ComputerSciencePaperPage'
 import { QuantumAlgorithmsBookPage } from './pages/QuantumAlgorithmsBookPage'
@@ -19,7 +20,11 @@ const routes = {
   '/': HomePage,
   '/lessons': LessonsPage,
   '/computer-science': ComputerScienceArchivePage,
-  '/computer-science/subjects': ComputerScienceSubjectsPage,
+  '/computer-science/subjects': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerScienceLibraryPage {...props} initialView="subjects" />,
+  '/computer-science/library/subjects': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerScienceLibraryPage {...props} initialView="subjects" />,
+  '/computer-science/library/topics': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerScienceLibraryPage {...props} initialView="topics" />,
+  '/computer-science/library/resources': (props: { onNavigate: (route: RoutePath) => void }) => <ComputerScienceLibraryPage {...props} initialView="resources" />,
+  '/computer-science/guide': ComputerScienceGuidePage,
   '/computer-science/subjects/algorithms': () => (
     <MarkdownContentPage
       contentPath="/content/knowledge/computer-science/algorithms"
@@ -61,12 +66,14 @@ const routes = {
 
 export type StaticRoutePath = keyof typeof routes
 export type ContentRoutePath = `/content/${string}`
-export type RoutePath = StaticRoutePath | ContentRoutePath
+export type RoutePath = StaticRoutePath | ContentRoutePath | LibraryDetailRoute
 
 function getRoute(pathname: string): RoutePath {
   if (pathname in routes) {
     return pathname as StaticRoutePath
   }
+
+  if (isLibraryDetailPath(pathname)) return pathname
 
   if (pathname.startsWith('/content/')) {
     return pathname as ContentRoutePath
@@ -89,6 +96,9 @@ export function App() {
       return () => <MarkdownContentPage contentPath={route} title="Archive" />
     }
 
+    if (isLibraryDetailPath(route)) {
+      return (props: { onNavigate: (route: RoutePath) => void }) => <ComputerScienceLibraryDetailPage {...props} route={route} />
+    }
     return routes[route as StaticRoutePath]
   }, [route])
 

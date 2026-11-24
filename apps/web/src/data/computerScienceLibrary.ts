@@ -6,6 +6,9 @@ export type LibraryWorkKind =
   | 'Manual'
   | 'Lecture notes'
   | 'Dataset'
+  | 'Source code'
+  | 'Technical report'
+  | 'Historical work'
 
 export type LibraryOpenMode = 'external' | 'static-html' | 'route'
 
@@ -46,7 +49,7 @@ export const computerScienceLibraryWorks: LibraryWork[] = [
     authors: ['NVIDIA'],
     kind: 'Technical guide',
     collection: 'Parallel & Distributed Systems',
-    subjects: ['Parallel & Distributed Computing', 'Computer Architecture'],
+    subjects: ['Distributed & Parallel Computing', 'Computer Architecture', 'Programming'],
     openMode: 'external',
     url: 'https://docs.nvidia.com/cuda/pdf/CUDA_C_Best_Practices_Guide.pdf',
     pdf: 'https://docs.nvidia.com/cuda/cuda-c-best-practices-guide/index.html',

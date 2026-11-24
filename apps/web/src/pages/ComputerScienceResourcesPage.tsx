@@ -43,7 +43,7 @@ export function ComputerScienceResourcesPage({ onNavigate }: Props) {
           <div className="cs-hub-context">
             ACM · IEEE · arXiv · USENIX · MIT Press · Springer · company research labs · professional learning.
             Some external services require registration or membership.
-            <button type="button" onClick={() => onNavigate('/computer-science/library')}> Open the existing Library →</button>
+            <button type="button" onClick={() => onNavigate('/computer-science/library')}> Browse individual works in Library →</button>
           </div>
 
           <div className="cs-hub-toolbar">

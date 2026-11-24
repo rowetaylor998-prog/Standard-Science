@@ -1,0 +1,17 @@
+.cs-catalog-nav{display:flex;flex-wrap:wrap;justify-content:center;gap:10px 24px;margin:0 0 26px;padding:12px 0;border-top:1px solid #d3d5c9;border-bottom:1px solid #d3d5c9}
+.cs-catalog-nav a,.cs-catalog-entrances a,.cs-catalog-item-title a,.cs-catalog-tags a,.cs-catalog-help a{color:#376b45;text-decoration:underline;text-underline-offset:2px}
+.cs-catalog-entrances{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}
+.cs-catalog-entrances article{padding:12px 14px;border:1px solid #cfd7c9;background:#eeefe7}
+.cs-catalog-entrances h3,.cs-catalog-item-title{margin:0 0 8px;font-size:17px}
+.cs-catalog-item-title{background:#eceee8;padding:5px 10px}
+.cs-catalog-entrances p{line-height:1.5}
+.cs-catalog-meta,.cs-catalog-empty{font-size:13px;color:#656e65}
+.cs-catalog-filters{display:flex;flex-wrap:wrap;gap:14px;margin:24px 0}
+.cs-catalog-filters label{display:flex;flex-direction:column;gap:6px;flex:1;min-width:min(100%,180px);font-weight:600;color:#436a49}
+.cs-catalog-filters input,.cs-catalog-filters select{width:100%;box-sizing:border-box;padding:10px;border:1px solid #aab7a9;background:#fffef9;color:#303830;font:inherit;font-weight:400}
+.cs-catalog-tags{display:flex;flex-wrap:wrap;gap:6px 14px;font-size:13px;line-height:1.5;margin:8px 0}
+.cs-catalog-work{padding:12px 0;border-bottom:1px solid #d0d1c6}
+.cs-catalog-work .cs-library-work{border:0;padding-bottom:0}
+.cs-catalog-work .cs-library-work h4 a,.cs-catalog-work .cs-library-work h4 button{color:#123b86}
+.cs-catalog-help{margin-top:28px;line-height:1.7}
+@media(max-width:700px){.cs-catalog-entrances{grid-template-columns:1fr}.cs-catalog-nav{gap:8px 16px}}
