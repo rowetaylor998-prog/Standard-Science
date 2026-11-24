@@ -1,0 +1,138 @@
+/* Standard Science — canonical document reading surface.
+   Keep all archive and index styles outside this scoped theme. */
+.document-reading-shell,
+body.archive-paper {
+  --reading-paper-color: #f7f6f5;
+  --reading-paper-image: url('/reading/paper-texture.webp');
+  --reading-ink: #222;
+  --reading-rule: #cdcdca;
+  --reading-link: #163b91;
+  min-height: 100vh;
+  color: var(--reading-ink);
+  background: var(--reading-paper-color) var(--reading-paper-image) repeat;
+  background-size: 320px 320px;
+}
+html:has(body.archive-paper) { background: #f7f6f5; }
+
+/* React document readers: the page itself is the paper, not a framed card. */
+.app-shell.document-reading-shell > main {
+  width: 100%;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.document-reading-shell .document-reading {
+  padding: 0;
+  margin: 0;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+}
+.document-reading-shell .cs-section-page {
+  width: 100%;
+  max-width: 940px;
+  min-height: 100vh;
+  margin: 0 auto;
+  padding: 28px clamp(20px, 6vw, 68px) 72px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  color: var(--reading-ink);
+}
+.document-reading-shell .cs-breadcrumb {
+  border-color: var(--reading-rule);
+  color: #555;
+}
+.document-reading-shell .cs-breadcrumb button { color: var(--reading-link); }
+.document-reading-shell .cs-breadcrumb strong { color: #333; }
+.document-reading-shell .cs-section-header > p { color: #555; font-weight: 400; font-size: 15px; }
+.document-reading-shell .cs-section-header h1 {
+  color: var(--reading-ink);
+  font-size: clamp(30px, 4.5vw, 45px);
+  font-weight: 500;
+  line-height: 1.15;
+}
+.document-reading-shell .cs-paper-reading {
+  max-width: none;
+  padding: 0;
+  color: var(--reading-ink);
+  background: transparent;
+  font: 18px/1.8 Georgia, 'Times New Roman', serif;
+}
+.document-reading-shell .cs-paper-reading h2,
+.document-reading-shell .cs-paper-reading h3 { color: #222; border-color: var(--reading-rule); }
+.document-reading-shell .cs-paper-reading a { color: var(--reading-link); }
+.document-reading-shell .cs-paper-reading .cs-paper-note {
+  background: transparent;
+  border-left: 2px solid var(--reading-rule);
+  color: #555;
+}
+.document-reading-shell .markdown-page {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 36px clamp(20px, 6vw, 68px) 72px;
+  background: transparent;
+  border: 0;
+  box-shadow: none;
+  font-family: Georgia, 'Times New Roman', serif;
+}
+.document-reading-shell .markdown-page h1,
+.document-reading-shell .markdown-page h2,
+.document-reading-shell .markdown-page h3 { color: #222; border-color: var(--reading-rule); }
+.document-reading-shell .markdown-page p,
+.document-reading-shell .markdown-page li { color: var(--reading-ink); line-height: 1.8; }
+.document-reading-shell .markdown-page a { color: var(--reading-link); }
+.document-reading-shell .markdown-page img { max-width: 100%; height: auto; }
+
+/* Standalone HTML papers share the identical image and transparent surface. */
+body.archive-paper { --paper: #f7f6f5; --ink: #222; --blue: #163b91; --rule: #cdcdca; --outer: #f7f6f5; }
+body.archive-paper .paper {
+  width: 100%;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 42px clamp(20px, 6vw, 68px) 72px;
+  background: transparent;
+  border: 0;
+  border-radius: 0;
+  box-shadow: none;
+}
+body.archive-paper .topbar {
+  position: static;
+  max-width: 940px;
+  margin: 0 auto;
+  padding: 14px clamp(20px, 6vw, 68px);
+  background: transparent;
+  border-color: var(--reading-rule);
+}
+body.archive-paper h1, body.archive-paper h2, body.archive-paper h3,
+body.archive-paper h2 span, body.archive-paper h3 span { color: #222; }
+body.archive-paper .authors, body.archive-paper .meta,
+body.archive-paper figcaption, body.archive-paper .footnote { color: #555; }
+body.archive-paper .toc, body.archive-paper .equation, body.archive-paper .source-note,
+body.archive-paper .paper-table-wrap, body.archive-paper .source-figure-box {
+  background: transparent;
+  border-color: var(--reading-rule);
+  color: #333;
+}
+body.archive-paper .paper-table th, body.archive-paper .paper-table .group { background: #e9e9e7; color: #333; }
+body.archive-paper .paper-table tbody tr:nth-child(even) { background: rgba(225,225,225,.25); }
+body.archive-paper .paper-table th, body.archive-paper .paper-table td,
+body.archive-paper figure img { border-color: var(--reading-rule); }
+body.archive-paper .paper-table .muted { color: #777; }
+body.archive-paper .annotation-launch {
+  background: #f7f6f5; color: #333; border: 1px solid #aaa;
+}
+body.archive-paper .notes-drawer, body.archive-paper .selection-note {
+  background: #f7f6f5 var(--reading-paper-image) repeat;
+  border-color: #aaa;
+}
+@media (max-width: 720px) {
+  body.archive-paper .paper, .document-reading-shell .cs-section-page,
+  .document-reading-shell .markdown-page { padding-inline: 20px; }
+  body.archive-paper .paper h1 { font-size: 34px; }
+}

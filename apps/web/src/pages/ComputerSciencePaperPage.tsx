@@ -63,7 +63,7 @@ const papers: Record<'transformer' | 'imagenet', Paper> = {
 export function ComputerSciencePaperPage({ onNavigate, paperId }: Props & { paperId: 'transformer' | 'imagenet' }) {
   const paper = papers[paperId]
   return (
-    <div className="cs-library-photo-background">
+    <div className="document-reading">
       <ComputerScienceSectionFrame
         title={paper.title}
         eyebrow="Computer Science Internet Archive · Original Papers"

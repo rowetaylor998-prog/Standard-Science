@@ -12,7 +12,19 @@ export function Layout({ children, currentRoute }: LayoutProps) {
   const isComputerScienceHome = currentRoute === '/computer-science'
   const isLessonsHome = currentRoute === '/lessons'
 
-  const shellClassName = isComputerScienceHome
+  // Standalone document readers use the approved paper surface; archive indexes do not.
+  const isReadingRoute =
+    currentRoute === '/computer-science/library/attention-is-all-you-need' ||
+    currentRoute === '/computer-science/library/imagenet-classification' ||
+    currentRoute === '/computer-science/library/quantum-algorithms' ||
+    currentRoute === '/manifesto' ||
+    (currentRoute.startsWith('/content/') &&
+      currentRoute !== '/content/knowledge/computer-science/algorithms' &&
+      !/\/(index|README)(\.md)?$/i.test(currentRoute))
+
+  const shellClassName = isReadingRoute
+    ? 'app-shell document-reading-shell'
+    : isComputerScienceHome
     ? 'app-shell cs-archive-shell'
     : isComputerScienceRoute
       ? 'app-shell cs-section-shell'

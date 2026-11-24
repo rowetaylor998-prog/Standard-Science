@@ -71,7 +71,7 @@ const sections = [
 
 export function QuantumAlgorithmsBookPage({ onNavigate }: Props) {
   return (
-    <div className="cs-library-photo-background">
+    <div className="document-reading">
       <ComputerScienceSectionFrame
         title="Quantum Algorithms"
         eyebrow="Computer Science Internet Archive · Quantum Computing"
